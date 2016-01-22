@@ -38,7 +38,7 @@
 		BC5571AB1C51D04A00019326 /* ZDTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDTableViewController.m; sourceTree = "<group>"; };
 		BC5571AD1C51D10800019326 /* PromiseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromiseController.h; sourceTree = "<group>"; };
 		BC5571AE1C51D10800019326 /* PromiseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromiseController.m; sourceTree = "<group>"; };
-		BCAC9F9B1B93555100822B5E /* BoltsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoltsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCAC9F9B1B93555100822B5E /* ZDSyncDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZDSyncDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCAC9F9F1B93555100822B5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCAC9FA01B93555100822B5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BCAC9FA21B93555100822B5E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		BCAC9FA91B93555100822B5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BCAC9FAB1B93555100822B5E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BCAC9FAE1B93555100822B5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		BCAC9FB41B93555100822B5E /* BoltsDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoltsDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCAC9FB41B93555100822B5E /* ZDSyncDemo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZDSyncDemo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCAC9FB91B93555100822B5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCAC9FBA1B93555100822B5E /* BoltsDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoltsDemoTests.m; sourceTree = "<group>"; };
 		BCAC9FC51B9356C200822B5E /* ZAFNetWorkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAFNetWorkService.h; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				BCAC9FC41B9356C200822B5E /* ZAFNetWorkService */,
-				BCAC9F9D1B93555100822B5E /* BoltsDemo */,
+				BCAC9F9D1B93555100822B5E /* SyncDemo */,
 				BCAC9FB71B93555100822B5E /* BoltsDemoTests */,
 				BCAC9F9C1B93555100822B5E /* Products */,
 				A8789FC260B88511905AF78A /* Pods */,
@@ -106,13 +106,13 @@
 		BCAC9F9C1B93555100822B5E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BCAC9F9B1B93555100822B5E /* BoltsDemo.app */,
-				BCAC9FB41B93555100822B5E /* BoltsDemoTests.xctest */,
+				BCAC9F9B1B93555100822B5E /* ZDSyncDemo.app */,
+				BCAC9FB41B93555100822B5E /* ZDSyncDemo.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BCAC9F9D1B93555100822B5E /* BoltsDemo */ = {
+		BCAC9F9D1B93555100822B5E /* SyncDemo */ = {
 			isa = PBXGroup;
 			children = (
 				BCAC9FA21B93555100822B5E /* AppDelegate.h */,
@@ -128,6 +128,7 @@
 				BCAC9FAD1B93555100822B5E /* LaunchScreen.xib */,
 				BCAC9F9E1B93555100822B5E /* Supporting Files */,
 			);
+			name = SyncDemo;
 			path = BoltsDemo;
 			sourceTree = "<group>";
 		};
@@ -169,9 +170,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BCAC9F9A1B93555100822B5E /* BoltsDemo */ = {
+		BCAC9F9A1B93555100822B5E /* ZDSyncDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BCAC9FBE1B93555100822B5E /* Build configuration list for PBXNativeTarget "BoltsDemo" */;
+			buildConfigurationList = BCAC9FBE1B93555100822B5E /* Build configuration list for PBXNativeTarget "ZDSyncDemo" */;
 			buildPhases = (
 				D3BF01F7184A78BA54E61F53 /* Check Pods Manifest.lock */,
 				BCAC9F971B93555100822B5E /* Sources */,
@@ -183,14 +184,14 @@
 			);
 			dependencies = (
 			);
-			name = BoltsDemo;
+			name = ZDSyncDemo;
 			productName = BoltsDemo;
-			productReference = BCAC9F9B1B93555100822B5E /* BoltsDemo.app */;
+			productReference = BCAC9F9B1B93555100822B5E /* ZDSyncDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BCAC9FB31B93555100822B5E /* BoltsDemoTests */ = {
+		BCAC9FB31B93555100822B5E /* ZDSyncDemoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BCAC9FC11B93555100822B5E /* Build configuration list for PBXNativeTarget "BoltsDemoTests" */;
+			buildConfigurationList = BCAC9FC11B93555100822B5E /* Build configuration list for PBXNativeTarget "ZDSyncDemoTests" */;
 			buildPhases = (
 				BCAC9FB01B93555100822B5E /* Sources */,
 				BCAC9FB11B93555100822B5E /* Frameworks */,
@@ -201,9 +202,9 @@
 			dependencies = (
 				BCAC9FB61B93555100822B5E /* PBXTargetDependency */,
 			);
-			name = BoltsDemoTests;
+			name = ZDSyncDemoTests;
 			productName = BoltsDemoTests;
-			productReference = BCAC9FB41B93555100822B5E /* BoltsDemoTests.xctest */;
+			productReference = BCAC9FB41B93555100822B5E /* ZDSyncDemo.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -225,7 +226,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BCAC9F961B93555100822B5E /* Build configuration list for PBXProject "BoltsDemo" */;
+			buildConfigurationList = BCAC9F961B93555100822B5E /* Build configuration list for PBXProject "ZDSyncDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -238,8 +239,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BCAC9F9A1B93555100822B5E /* BoltsDemo */,
-				BCAC9FB31B93555100822B5E /* BoltsDemoTests */,
+				BCAC9F9A1B93555100822B5E /* ZDSyncDemo */,
+				BCAC9FB31B93555100822B5E /* ZDSyncDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -324,7 +325,7 @@
 /* Begin PBXTargetDependency section */
 		BCAC9FB61B93555100822B5E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BCAC9F9A1B93555100822B5E /* BoltsDemo */;
+			target = BCAC9F9A1B93555100822B5E /* ZDSyncDemo */;
 			targetProxy = BCAC9FB51B93555100822B5E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -438,7 +439,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BoltsDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ZDSyncDemo;
 			};
 			name = Debug;
 		};
@@ -449,7 +450,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BoltsDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ZDSyncDemo;
 			};
 			name = Release;
 		};
@@ -467,8 +468,8 @@
 				);
 				INFOPLIST_FILE = BoltsDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BoltsDemo.app/BoltsDemo";
+				PRODUCT_NAME = ZDSyncDemo;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZDSyncDemo.app/ZDSyncDemo";
 			};
 			name = Debug;
 		};
@@ -482,15 +483,15 @@
 				);
 				INFOPLIST_FILE = BoltsDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BoltsDemo.app/BoltsDemo";
+				PRODUCT_NAME = ZDSyncDemo;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZDSyncDemo.app/ZDSyncDemo";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BCAC9F961B93555100822B5E /* Build configuration list for PBXProject "BoltsDemo" */ = {
+		BCAC9F961B93555100822B5E /* Build configuration list for PBXProject "ZDSyncDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BCAC9FBC1B93555100822B5E /* Debug */,
@@ -499,7 +500,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BCAC9FBE1B93555100822B5E /* Build configuration list for PBXNativeTarget "BoltsDemo" */ = {
+		BCAC9FBE1B93555100822B5E /* Build configuration list for PBXNativeTarget "ZDSyncDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BCAC9FBF1B93555100822B5E /* Debug */,
@@ -508,7 +509,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BCAC9FC11B93555100822B5E /* Build configuration list for PBXNativeTarget "BoltsDemoTests" */ = {
+		BCAC9FC11B93555100822B5E /* Build configuration list for PBXNativeTarget "ZDSyncDemoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BCAC9FC21B93555100822B5E /* Debug */,
