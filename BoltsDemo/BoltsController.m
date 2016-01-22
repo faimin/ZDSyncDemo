@@ -1,20 +1,20 @@
 //
-//  ViewController.m
-//  BoltsDemo
+// ViewController.m
+// BoltsDemo
 //
-//  Created by 符现超 on 15/8/30.
-//  Copyright (c) 2015年 ZD. All rights reserved.
-//  https://github.com/BoltsFramework/Bolts-iOS
+// Created by 符现超 on 15/8/30.
+// Copyright (c) 2015年 ZD. All rights reserved.
+// https://github.com/BoltsFramework/Bolts-iOS
 
-#import "ViewController.h"
+#import "BoltsController.h"
 #import <Bolts.h>
 #import "ZAFNetWorkService.h"
 
-@interface ViewController ()
+@interface BoltsController ()
 
 @end
 
-@implementation ViewController
+@implementation BoltsController
 
 #pragma mark - lifeCycle
 
@@ -22,11 +22,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
-    BFTask *task = [self taskTest1];
-    BFTask *task2 = [self taskTest2];
+
+    BFTask  *task      = [self taskTest1];
+    BFTask  *task2     = [self taskTest2];
     NSArray *taskArray = @[task, task2];
-    [[BFTask taskForCompletionOfAllTasks:taskArray] continueWithBlock:^id(BFTask *task) {
+    [[BFTask taskForCompletionOfAllTasks:taskArray] continueWithBlock: ^id (BFTask *task) {
         if (task.error)
         {
             NSLog(@"失败：%@", task.error);
@@ -37,8 +37,7 @@
         }
         return nil;
     }];
-}
-
+} /* viewDidLoad */
 
 - (void)didReceiveMemoryWarning
 {
@@ -48,35 +47,32 @@
 
 #pragma mark - Task
 
-- (BFTask *)taskTest1
+- (BFTask*)taskTest1
 {
-    
     BFTaskCompletionSource *taskSource = [BFTaskCompletionSource taskCompletionSource];
-    
-    [[ZAFNetWorkService shareInstance] requestWithURL:@"http://api.douban.com/v2/movie/top250" params:nil httpMethod:@"get" hasCertificate:NO sucess:^(id responseObject) {
+
+    [[ZAFNetWorkService shareInstance] requestWithURL:@"http://api.douban.com/v2/movie/top250" params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
         NSLog(@"1.--->%@", [NSDate date]);
         [taskSource setResult:responseObject];
-    } failure:^(NSError *error) {
+    } failure: ^(NSError *error) {
         [taskSource setError:error];
     }];
-    
-    return taskSource.task;
-}
 
-- (BFTask *)taskTest2
+    return taskSource.task;
+} /* taskTest1 */
+
+- (BFTask*)taskTest2
 {
     BFTaskCompletionSource *taskSource = [BFTaskCompletionSource taskCompletionSource];
-    
-    [[ZAFNetWorkService shareInstance] requestWithURL:@"http://www.weather.com.cn/data/cityinfo/101010100.html" params:nil httpMethod:@"get" hasCertificate:NO sucess:^(id responseObject) {
+
+    [[ZAFNetWorkService shareInstance] requestWithURL:@"http://www.weather.com.cn/data/cityinfo/101010100.html" params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
         NSLog(@"2.--->%@", [NSDate date]);
         [taskSource setResult:responseObject];
-    } failure:^(NSError *error) {
+    } failure: ^(NSError *error) {
         [taskSource setError:error];
     }];
-    
+
     return taskSource.task;
-}
-
-
+} /* taskTest2 */
 
 @end
