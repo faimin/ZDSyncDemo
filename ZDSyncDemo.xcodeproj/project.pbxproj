@@ -103,10 +103,10 @@
 			children = (
 				BCAC9FC41B9356C200822B5E /* ZAFNetWorkService */,
 				BCAC9F9D1B93555100822B5E /* SyncDemo */,
-				BCAC9FB71B93555100822B5E /* BoltsDemoTests */,
-				BCAC9F9C1B93555100822B5E /* Products */,
-				A8789FC260B88511905AF78A /* Pods */,
+				BCAC9FB71B93555100822B5E /* ZDSyncDemoTests */,
 				810A80883D924F74BC480E59 /* Frameworks */,
+				A8789FC260B88511905AF78A /* Pods */,
+				BCAC9F9C1B93555100822B5E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,17 +122,16 @@
 		BCAC9F9D1B93555100822B5E /* SyncDemo */ = {
 			isa = PBXGroup;
 			children = (
-				BCE4F9E81C5A130200BBDB03 /* ZDCommon.h */,
+				BCAC9F9E1B93555100822B5E /* Supporting Files */,
 				BCE4F9E91C5A206600BBDB03 /* ViewController */,
 				BCAC9FA21B93555100822B5E /* AppDelegate.h */,
 				BCAC9FA31B93555100822B5E /* AppDelegate.m */,
-				BCAC9FA81B93555100822B5E /* Main.storyboard */,
 				BCAC9FAB1B93555100822B5E /* Images.xcassets */,
 				BCAC9FAD1B93555100822B5E /* LaunchScreen.xib */,
-				BCAC9F9E1B93555100822B5E /* Supporting Files */,
+				BCAC9FA81B93555100822B5E /* Main.storyboard */,
+				BCE4F9E81C5A130200BBDB03 /* ZDCommon.h */,
 			);
-			name = SyncDemo;
-			path = BoltsDemo;
+			path = SyncDemo;
 			sourceTree = "<group>";
 		};
 		BCAC9F9E1B93555100822B5E /* Supporting Files */ = {
@@ -141,15 +140,16 @@
 				BCAC9F9F1B93555100822B5E /* Info.plist */,
 				BCAC9FA01B93555100822B5E /* main.m */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BCAC9FB71B93555100822B5E /* BoltsDemoTests */ = {
+		BCAC9FB71B93555100822B5E /* ZDSyncDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				BCAC9FBA1B93555100822B5E /* BoltsDemoTests.m */,
 				BCAC9FB81B93555100822B5E /* Supporting Files */,
+				BCAC9FBA1B93555100822B5E /* BoltsDemoTests.m */,
 			);
+			name = ZDSyncDemoTests;
 			path = BoltsDemoTests;
 			sourceTree = "<group>";
 		};
@@ -158,7 +158,7 @@
 			children = (
 				BCAC9FB91B93555100822B5E /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		BCAC9FC41B9356C200822B5E /* ZAFNetWorkService */ = {
@@ -173,18 +173,18 @@
 		BCE4F9E91C5A206600BBDB03 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				BC5571AA1C51D04A00019326 /* ZDTableViewController.h */,
-				BC5571AB1C51D04A00019326 /* ZDTableViewController.m */,
 				BCAC9FA51B93555100822B5E /* BoltsController.h */,
 				BCAC9FA61B93555100822B5E /* BoltsController.m */,
-				BC5571AD1C51D10800019326 /* PromiseController.h */,
-				BC5571AE1C51D10800019326 /* PromiseController.m */,
-				BCE4F9E21C5A10BF00BBDB03 /* OperationQueue.h */,
-				BCE4F9E31C5A10BF00BBDB03 /* OperationQueue.m */,
 				BCE4F9E51C5A10D100BBDB03 /* GCD.h */,
 				BCE4F9E61C5A10D100BBDB03 /* GCD.m */,
+				BCE4F9E21C5A10BF00BBDB03 /* OperationQueue.h */,
+				BCE4F9E31C5A10BF00BBDB03 /* OperationQueue.m */,
+				BC5571AD1C51D10800019326 /* PromiseController.h */,
+				BC5571AE1C51D10800019326 /* PromiseController.m */,
+				BC5571AA1C51D04A00019326 /* ZDTableViewController.h */,
+				BC5571AB1C51D04A00019326 /* ZDTableViewController.m */,
 			);
-			name = ViewController;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,6 +359,7 @@
 				BCAC9FA91B93555100822B5E /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		BCAC9FAD1B93555100822B5E /* LaunchScreen.xib */ = {
@@ -367,6 +368,7 @@
 				BCAC9FAE1B93555100822B5E /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -459,7 +461,7 @@
 			baseConfigurationReference = 9F7F2BAFE1C46E5C7253F6EB /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = BoltsDemo/Info.plist;
+				INFOPLIST_FILE = "SyncDemo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = ZDSyncDemo;
 			};
@@ -470,7 +472,7 @@
 			baseConfigurationReference = 8D98B395A35304AA3F63E717 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = BoltsDemo/Info.plist;
+				INFOPLIST_FILE = "SyncDemo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = ZDSyncDemo;
 			};
@@ -488,7 +490,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = BoltsDemoTests/Info.plist;
+				INFOPLIST_FILE = "BoltsDemoTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = ZDSyncDemo;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZDSyncDemo.app/ZDSyncDemo";
@@ -503,7 +505,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = BoltsDemoTests/Info.plist;
+				INFOPLIST_FILE = "BoltsDemoTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = ZDSyncDemo;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZDSyncDemo.app/ZDSyncDemo";
