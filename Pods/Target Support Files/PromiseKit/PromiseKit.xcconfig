@@ -1,2 +1,5 @@
-PROMISEKIT_GCC_PREPROCESSOR_DEFINITIONS = $(inherited) PMK_CALAYER=1 $(inherited) PMK_NSNOTIFICATIONCENTER=1 $(inherited) PMK_NSURLCONNECTION=1 $(inherited) PMK_PAUSE=1 $(inherited) PMK_UIACTIONSHEET=1 $(inherited) PMK_UIALERTVIEW=1 $(inherited) PMK_UIVIEW=1 $(inherited) PMK_UIVIEWCONTROLLER=1 $(inherited) PMK_UNTIL=1 $(inherited) PMK_WHEN=1
-PROMISEKIT_OTHER_LDFLAGS = -framework "Foundation" -framework "QuartzCore" -framework "UIKit" -weak_framework "AssetsLibrary"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1 $(inherited) PMK_CALAYER=1 $(inherited) PMK_NSNOTIFICATIONCENTER=1 $(inherited) PMK_NSURLCONNECTION=1 $(inherited) PMK_PAUSE=1 $(inherited) PMK_UIACTIONSHEET=1 $(inherited) PMK_UIALERTVIEW=1 $(inherited) PMK_UIVIEW=1 $(inherited) PMK_UIVIEWCONTROLLER=1 $(inherited) PMK_UNTIL=1 $(inherited) PMK_WHEN=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/PromiseKit" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/Bolts" "${PODS_ROOT}/Headers/Public/OMGHTTPURLRQ" "${PODS_ROOT}/Headers/Public/PromiseKit" "${PODS_ROOT}/Headers/Public/Realm"
+OTHER_LDFLAGS = -framework "Foundation" -framework "QuartzCore" -framework "UIKit" -weak_framework "AssetsLibrary"
+PODS_ROOT = ${SRCROOT}
+SKIP_INSTALL = YES
