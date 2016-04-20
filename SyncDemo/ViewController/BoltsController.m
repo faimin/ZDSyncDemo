@@ -27,12 +27,10 @@
     BFTask  *task2     = [self taskTest2];
     NSArray *taskArray = @[task, task2];
     [[BFTask taskForCompletionOfAllTasks:taskArray] continueWithBlock: ^id (BFTask *task) {
-        if (task.error)
-        {
-            NSLog(@"失败：%@", task.error);
+        if (task.error) {
+            NSLog(@"失败：%@", task.error.localizedDescription);
         }
-        else
-        {
+        else {
             NSLog(@"成功：%@", task.result);
         }
         return nil;

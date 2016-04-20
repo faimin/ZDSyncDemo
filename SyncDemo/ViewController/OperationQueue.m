@@ -39,7 +39,7 @@
     NSOperationQueue *myOperationQueue = [[NSOperationQueue alloc] init];
     myOperationQueue.maxConcurrentOperationCount = 10;
     
-    __weak __typeof(&*self)weakSelf = self;
+    //__weak __typeof(&*self)weakSelf = self;
     [myOperationQueue addOperationWithBlock:^{
         NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:images()[1]]];
         UIImage *image = [UIImage imageWithData:data];
