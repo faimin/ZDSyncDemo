@@ -11,8 +11,8 @@
 typedef void(^BlockAction)();
 typedef void(^GroupResponseFailure)(NSArray * errorArray);
 
-static char groupErrorKey;
-static char queueGroupKey;
+//static char groupErrorKey;
+//static char queueGroupKey;
 
 const void *key = &key;
 

@@ -39,33 +39,37 @@
     NSOperationQueue *myOperationQueue = [[NSOperationQueue alloc] init];
     myOperationQueue.maxConcurrentOperationCount = 10;
     
-    //__weak __typeof(&*self)weakSelf = self;
+    
     [myOperationQueue addOperationWithBlock:^{
         NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:images()[1]]];
         UIImage *image = [UIImage imageWithData:data];
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            //__strong __typeof(*&weakSelf)self = weakSelf;
             self.imageView.image = image;
         }];
         NSLog(@"第1张image下载完毕");
     }];
     
+    
     NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
         NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:images()[2]]];
         UIImage *image = [UIImage imageWithData:data];
+        if ([NSThread isMainThread]) {
+            NSLog(@"主线程");
+        }
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            //__strong __typeof(*&weakSelf)self = weakSelf;
             self.imageView.image = image;
         }];
         NSLog(@"第2张image下载完毕");
     }];
     [myOperationQueue addOperation:blockOperation];
+    //支持kvo
+    //[myOperationQueue addObserver:self forKeyPath:NSStringFromSelector(@selector(isFinished)) options:NSKeyValueObservingOptionNew context:nil];
+    
     
     [myOperationQueue addOperationWithBlock:^{
         NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:images()[3]]];
         UIImage *image = [UIImage imageWithData:data];
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            //__strong __typeof(*&weakSelf)self = weakSelf;
             self.imageView.image = image;
         }];
         NSLog(@"第3张image下载完毕");
@@ -74,6 +78,11 @@
     [myOperationQueue waitUntilAllOperationsAreFinished];
     
     NSLog(@"都下载完毕");
+}
+
+- (void)operation
+{
+
 }
 
 /*
