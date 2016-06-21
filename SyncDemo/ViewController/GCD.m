@@ -36,8 +36,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)GCDSync1
-{
+- (void)GCDSync1 {
     dispatch_queue_t queue = dispatch_queue_create("myQueue1", DISPATCH_QUEUE_CONCURRENT);
     dispatch_group_t group = dispatch_group_create();
     //__weak __typeof(&*self)weakSelf = self;
@@ -45,7 +44,7 @@
         NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:images()[1]]];
         UIImage *image = [UIImage imageWithData:data];
         dispatch_async(dispatch_get_main_queue(), ^{
-            //__strong __typeof(*&weakSelf)self = weakSelf;
+            //__strong __typeof(&*weakSelf)self = weakSelf;
             self.imageView.image = image;
             NSLog(@"第1张图");
         });
@@ -55,7 +54,7 @@
         NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:images()[2]]];
         UIImage *image = [UIImage imageWithData:data];
         dispatch_async(dispatch_get_main_queue(), ^{
-            //__strong __typeof(*&weakSelf)self = weakSelf;
+            //__strong __typeof(&*weakSelf)self = weakSelf;
             self.imageView.image = image;
             NSLog(@"第2张图");
         });
@@ -65,7 +64,7 @@
         NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:images()[3]]];
         UIImage *image = [UIImage imageWithData:data];
         dispatch_async(dispatch_get_main_queue(), ^{
-            //__strong __typeof(*&weakSelf)self = weakSelf;
+            //__strong __typeof(&*weakSelf)self = weakSelf;
             self.imageView.image = image;
             NSLog(@"第3张图");
         });
