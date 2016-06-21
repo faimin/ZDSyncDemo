@@ -76,8 +76,7 @@
     });
 }
 
-- (void)GCDSync2
-{
+- (void)GCDSync2 {
     dispatch_queue_t queue = dispatch_queue_create("myQueue2", DISPATCH_QUEUE_CONCURRENT);
     dispatch_group_t group = dispatch_group_create();
     
@@ -85,7 +84,7 @@
     NSData *data1 = [NSData dataWithContentsOfURL:[NSURL URLWithString:images()[0]]];
     UIImage *image1 = [UIImage imageWithData:data1];
     dispatch_async(dispatch_get_main_queue(), ^{
-        //__strong __typeof(*&weakSelf)self = weakSelf;
+        //__strong __typeof(&*weakSelf)self = weakSelf;
         self.imageView.image = image1;
         dispatch_group_leave(group);
         NSLog(@"第1张图");
@@ -95,7 +94,7 @@
     NSData *data2 = [NSData dataWithContentsOfURL:[NSURL URLWithString:images()[1]]];
     UIImage *image2 = [UIImage imageWithData:data2];
     dispatch_async(dispatch_get_main_queue(), ^{
-        //__strong __typeof(*&weakSelf)self = weakSelf;
+        //__strong __typeof(&*weakSelf)self = weakSelf;
         self.imageView.image = image2;
         dispatch_group_leave(group);
         NSLog(@"第2张图");
@@ -109,12 +108,11 @@
     NSData *data3 = [NSData dataWithContentsOfURL:[NSURL URLWithString:images()[2]]];
     UIImage *image3 = [UIImage imageWithData:data3];
     dispatch_async(dispatch_get_main_queue(), ^{
-        //__strong __typeof(*&weakSelf)self = weakSelf;
+        //__strong __typeof(&*weakSelf)self = weakSelf;
         self.imageView.image = image3;
         dispatch_group_leave(group);
         NSLog(@"第3张图");
     });
-
 }
 
 
