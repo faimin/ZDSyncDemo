@@ -27,3 +27,29 @@ static inline NSArray *images(){
 #define WeatherAPI  @"http://www.weather.com.cn/data/cityinfo/101010100.html"
 
 #endif /* ZDCommon_h */
+
+
+#define weakify(_objc) __weak __typeof(&*_objc)weak##_objc = _objc;
+#define strongify(_objc) __strong __typeof(&*weak##_objc)_objc = weak##_objc;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
