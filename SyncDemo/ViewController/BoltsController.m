@@ -4,7 +4,7 @@
 //
 // Created by 符现超 on 15/8/30.
 // Copyright (c) 2015年 ZD. All rights reserved.
-// https://github.com/BoltsFramework/Bolts-iOS
+// https://github.com/BoltsFramework/Bolts-ObjC
 
 #import "BoltsController.h"
 #import <Bolts.h>
@@ -22,10 +22,15 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    /**
+     1、每个task对象维护着一个属于它的数组（用来盛放回调block），每次task被continueWithBlock：（类似于信号被订阅）后，都会把这个block放入数组callbacks中，用来数据返回时的回调。
+     2、当有结果后，手动调用setResult：，然后会拿到task的callbacks数组，进行遍历回调，然后continue的那个block会执行。
+     */
 
-    BFTask  *task      = [self taskTest1];
+    BFTask  *task1     = [self taskTest1];
     BFTask  *task2     = [self taskTest2];
-    NSArray *taskArray = @[task, task2];
+    NSArray *taskArray = @[task1, task2];
     [[BFTask taskForCompletionOfAllTasks:taskArray] continueWithBlock: ^id (BFTask *task) {
         if (task.error) {
             NSLog(@"失败：%@", task.error.localizedDescription);
