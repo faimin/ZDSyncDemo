@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		05DA93901CDCF44800DEE384 /* ZDTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DA938F1CDCF44800DEE384 /* ZDTask.m */; };
 		6BCF7C59AEB3A3A99E6703C4 /* libPods-ZDSyncDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4E89B1A53144A5E776514F /* libPods-ZDSyncDemo.a */; };
+		BC10539A1D41FC68004A33FE /* Blots、PromiseKit简析.md in Sources */ = {isa = PBXBuildFile; fileRef = BC1053991D41FC68004A33FE /* Blots、PromiseKit简析.md */; };
 		BC5571AC1C51D04A00019326 /* ZDTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5571AB1C51D04A00019326 /* ZDTableViewController.m */; };
 		BC5571AF1C51D10800019326 /* PromiseController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5571AE1C51D10800019326 /* PromiseController.m */; };
 		BCAC9FA11B93555100822B5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAC9FA01B93555100822B5E /* main.m */; };
@@ -38,6 +39,7 @@
 		05DA938F1CDCF44800DEE384 /* ZDTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDTask.m; sourceTree = "<group>"; };
 		75B7FCBD913712DAEC34136B /* Pods-ZDSyncDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZDSyncDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZDSyncDemo/Pods-ZDSyncDemo.release.xcconfig"; sourceTree = "<group>"; };
 		7B4E89B1A53144A5E776514F /* libPods-ZDSyncDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZDSyncDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC1053991D41FC68004A33FE /* Blots、PromiseKit简析.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "Blots、PromiseKit简析.md"; sourceTree = "<group>"; };
 		BC5571AA1C51D04A00019326 /* ZDTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDTableViewController.h; sourceTree = "<group>"; };
 		BC5571AB1C51D04A00019326 /* ZDTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDTableViewController.m; sourceTree = "<group>"; };
 		BC5571AD1C51D10800019326 /* PromiseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromiseController.h; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		BCAC9F921B93555100822B5E = {
 			isa = PBXGroup;
 			children = (
+				BC1053991D41FC68004A33FE /* Blots、PromiseKit简析.md */,
 				BCAC9FC41B9356C200822B5E /* ZAFNetWorkService */,
 				BCAC9F9D1B93555100822B5E /* SyncDemo */,
 				BCAC9FB71B93555100822B5E /* ZDSyncDemoTests */,
@@ -348,6 +351,7 @@
 				BC5571AF1C51D10800019326 /* PromiseController.m in Sources */,
 				BCAC9FA41B93555100822B5E /* AppDelegate.m in Sources */,
 				BCE4F9E41C5A10BF00BBDB03 /* OperationQueue.m in Sources */,
+				BC10539A1D41FC68004A33FE /* Blots、PromiseKit简析.md in Sources */,
 				BC5571AC1C51D04A00019326 /* ZDTableViewController.m in Sources */,
 				BCAC9FC71B9356C200822B5E /* ZAFNetWorkService.m in Sources */,
 				BCE4F9E71C5A10D100BBDB03 /* GCD.m in Sources */,

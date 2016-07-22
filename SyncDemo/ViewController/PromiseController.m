@@ -11,7 +11,7 @@
 #import <PromiseKit.h>
 
 @interface PromiseController ()
-
+@property (weak, nonatomic) IBOutlet UITextView *textview;
 @end
 
 @implementation PromiseController
@@ -41,8 +41,15 @@
         }];
     }];
     
+    __weak __typeof(&*self)weakSelf = self;
     promise.then(^(id value){
-        NSLog(@"%@", value);
+        __strong __typeof(&*weakSelf)self = weakSelf;
+        NSLog(@"1--->%@", @"第一次");
+        self.textview.text = value;
+    });
+    
+    promise.then(^(id value){
+        NSLog(@"2--->%@", @"第二次");
     });
 }
 
