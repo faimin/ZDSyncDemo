@@ -22,13 +22,11 @@ const void *key = &key;
 
 @implementation ZDTask
 
-+ (instancetype)task
-{
++ (instancetype)task {
     return [[self alloc] init];
 }
 
-- (void)testWithBlock:(void(^)())completeBlock
-{
+- (void)testWithBlock:(void(^)())completeBlock {
     dispatch_group_t zdGroup = dispatch_group_create();
     dispatch_queue_t zdQueue = dispatch_queue_create("ZDTaskQueue", DISPATCH_QUEUE_CONCURRENT);
     

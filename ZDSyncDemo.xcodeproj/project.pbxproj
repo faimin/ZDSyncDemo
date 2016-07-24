@@ -9,19 +9,18 @@
 /* Begin PBXBuildFile section */
 		05DA93901CDCF44800DEE384 /* ZDTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DA938F1CDCF44800DEE384 /* ZDTask.m */; };
 		6BCF7C59AEB3A3A99E6703C4 /* libPods-ZDSyncDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4E89B1A53144A5E776514F /* libPods-ZDSyncDemo.a */; };
-		BC10539A1D41FC68004A33FE /* Blots、PromiseKit简析.md in Sources */ = {isa = PBXBuildFile; fileRef = BC1053991D41FC68004A33FE /* Blots、PromiseKit简析.md */; };
 		BC5571AC1C51D04A00019326 /* ZDTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5571AB1C51D04A00019326 /* ZDTableViewController.m */; };
-		BC5571AF1C51D10800019326 /* PromiseController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5571AE1C51D10800019326 /* PromiseController.m */; };
+		BC5571AF1C51D10800019326 /* PromiseKitDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5571AE1C51D10800019326 /* PromiseKitDemo.m */; };
 		BCAC9FA11B93555100822B5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAC9FA01B93555100822B5E /* main.m */; };
 		BCAC9FA41B93555100822B5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAC9FA31B93555100822B5E /* AppDelegate.m */; };
-		BCAC9FA71B93555100822B5E /* BoltsController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAC9FA61B93555100822B5E /* BoltsController.m */; };
+		BCAC9FA71B93555100822B5E /* BoltsDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAC9FA61B93555100822B5E /* BoltsDemo.m */; };
 		BCAC9FAA1B93555100822B5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCAC9FA81B93555100822B5E /* Main.storyboard */; };
 		BCAC9FAC1B93555100822B5E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCAC9FAB1B93555100822B5E /* Images.xcassets */; };
 		BCAC9FAF1B93555100822B5E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCAC9FAD1B93555100822B5E /* LaunchScreen.xib */; };
 		BCAC9FBB1B93555100822B5E /* BoltsDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAC9FBA1B93555100822B5E /* BoltsDemoTests.m */; };
 		BCAC9FC71B9356C200822B5E /* ZAFNetWorkService.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAC9FC61B9356C200822B5E /* ZAFNetWorkService.m */; };
 		BCE4F9E41C5A10BF00BBDB03 /* OperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE4F9E31C5A10BF00BBDB03 /* OperationQueue.m */; };
-		BCE4F9E71C5A10D100BBDB03 /* GCD.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE4F9E61C5A10D100BBDB03 /* GCD.m */; };
+		BCE4F9E71C5A10D100BBDB03 /* GCDDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE4F9E61C5A10D100BBDB03 /* GCDDemo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,18 +38,17 @@
 		05DA938F1CDCF44800DEE384 /* ZDTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDTask.m; sourceTree = "<group>"; };
 		75B7FCBD913712DAEC34136B /* Pods-ZDSyncDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZDSyncDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZDSyncDemo/Pods-ZDSyncDemo.release.xcconfig"; sourceTree = "<group>"; };
 		7B4E89B1A53144A5E776514F /* libPods-ZDSyncDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZDSyncDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC1053991D41FC68004A33FE /* Blots、PromiseKit简析.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "Blots、PromiseKit简析.md"; sourceTree = "<group>"; };
 		BC5571AA1C51D04A00019326 /* ZDTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDTableViewController.h; sourceTree = "<group>"; };
 		BC5571AB1C51D04A00019326 /* ZDTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDTableViewController.m; sourceTree = "<group>"; };
-		BC5571AD1C51D10800019326 /* PromiseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromiseController.h; sourceTree = "<group>"; };
-		BC5571AE1C51D10800019326 /* PromiseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromiseController.m; sourceTree = "<group>"; };
+		BC5571AD1C51D10800019326 /* PromiseKitDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromiseKitDemo.h; sourceTree = "<group>"; };
+		BC5571AE1C51D10800019326 /* PromiseKitDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromiseKitDemo.m; sourceTree = "<group>"; };
 		BCAC9F9B1B93555100822B5E /* ZDSyncDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZDSyncDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCAC9F9F1B93555100822B5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCAC9FA01B93555100822B5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BCAC9FA21B93555100822B5E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BCAC9FA31B93555100822B5E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BCAC9FA51B93555100822B5E /* BoltsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoltsController.h; sourceTree = "<group>"; };
-		BCAC9FA61B93555100822B5E /* BoltsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoltsController.m; sourceTree = "<group>"; };
+		BCAC9FA51B93555100822B5E /* BoltsDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoltsDemo.h; sourceTree = "<group>"; };
+		BCAC9FA61B93555100822B5E /* BoltsDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoltsDemo.m; sourceTree = "<group>"; };
 		BCAC9FA91B93555100822B5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BCAC9FAB1B93555100822B5E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BCAC9FAE1B93555100822B5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -61,8 +59,8 @@
 		BCAC9FC61B9356C200822B5E /* ZAFNetWorkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAFNetWorkService.m; sourceTree = "<group>"; };
 		BCE4F9E21C5A10BF00BBDB03 /* OperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationQueue.h; sourceTree = "<group>"; };
 		BCE4F9E31C5A10BF00BBDB03 /* OperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationQueue.m; sourceTree = "<group>"; };
-		BCE4F9E51C5A10D100BBDB03 /* GCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCD.h; sourceTree = "<group>"; };
-		BCE4F9E61C5A10D100BBDB03 /* GCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCD.m; sourceTree = "<group>"; };
+		BCE4F9E51C5A10D100BBDB03 /* GCDDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDDemo.h; sourceTree = "<group>"; };
+		BCE4F9E61C5A10D100BBDB03 /* GCDDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDDemo.m; sourceTree = "<group>"; };
 		BCE4F9E81C5A130200BBDB03 /* ZDCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCommon.h; sourceTree = "<group>"; };
 		F89F0378169984B0A47B89B2 /* Pods-ZDSyncDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZDSyncDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZDSyncDemo/Pods-ZDSyncDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,7 +104,6 @@
 		BCAC9F921B93555100822B5E = {
 			isa = PBXGroup;
 			children = (
-				BC1053991D41FC68004A33FE /* Blots、PromiseKit简析.md */,
 				BCAC9FC41B9356C200822B5E /* ZAFNetWorkService */,
 				BCAC9F9D1B93555100822B5E /* SyncDemo */,
 				BCAC9FB71B93555100822B5E /* ZDSyncDemoTests */,
@@ -179,14 +176,14 @@
 		BCE4F9E91C5A206600BBDB03 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				BCAC9FA51B93555100822B5E /* BoltsController.h */,
-				BCAC9FA61B93555100822B5E /* BoltsController.m */,
-				BCE4F9E51C5A10D100BBDB03 /* GCD.h */,
-				BCE4F9E61C5A10D100BBDB03 /* GCD.m */,
+				BCAC9FA51B93555100822B5E /* BoltsDemo.h */,
+				BCAC9FA61B93555100822B5E /* BoltsDemo.m */,
+				BCE4F9E51C5A10D100BBDB03 /* GCDDemo.h */,
+				BCE4F9E61C5A10D100BBDB03 /* GCDDemo.m */,
 				BCE4F9E21C5A10BF00BBDB03 /* OperationQueue.h */,
 				BCE4F9E31C5A10BF00BBDB03 /* OperationQueue.m */,
-				BC5571AD1C51D10800019326 /* PromiseController.h */,
-				BC5571AE1C51D10800019326 /* PromiseController.m */,
+				BC5571AD1C51D10800019326 /* PromiseKitDemo.h */,
+				BC5571AE1C51D10800019326 /* PromiseKitDemo.m */,
 				05DA938E1CDCF44800DEE384 /* ZDTask.h */,
 				05DA938F1CDCF44800DEE384 /* ZDTask.m */,
 				BC5571AA1C51D04A00019326 /* ZDTableViewController.h */,
@@ -243,7 +240,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = ZD;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = ZD;
 				TargetAttributes = {
 					BCAC9F9A1B93555100822B5E = {
@@ -347,14 +344,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCAC9FA71B93555100822B5E /* BoltsController.m in Sources */,
-				BC5571AF1C51D10800019326 /* PromiseController.m in Sources */,
+				BCAC9FA71B93555100822B5E /* BoltsDemo.m in Sources */,
+				BC5571AF1C51D10800019326 /* PromiseKitDemo.m in Sources */,
 				BCAC9FA41B93555100822B5E /* AppDelegate.m in Sources */,
 				BCE4F9E41C5A10BF00BBDB03 /* OperationQueue.m in Sources */,
-				BC10539A1D41FC68004A33FE /* Blots、PromiseKit简析.md in Sources */,
 				BC5571AC1C51D04A00019326 /* ZDTableViewController.m in Sources */,
 				BCAC9FC71B9356C200822B5E /* ZAFNetWorkService.m in Sources */,
-				BCE4F9E71C5A10D100BBDB03 /* GCD.m in Sources */,
+				BCE4F9E71C5A10D100BBDB03 /* GCDDemo.m in Sources */,
 				05DA93901CDCF44800DEE384 /* ZDTask.m in Sources */,
 				BCAC9FA11B93555100822B5E /* main.m in Sources */,
 			);
@@ -421,6 +417,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -488,8 +485,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "SyncDemo/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zd.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ZDSyncDemo;
 			};
 			name = Debug;
@@ -500,8 +498,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "SyncDemo/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zd.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ZDSyncDemo;
 			};
 			name = Release;
@@ -520,6 +519,7 @@
 				);
 				INFOPLIST_FILE = "BoltsDemoTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zd.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ZDSyncDemo;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZDSyncDemo.app/ZDSyncDemo";
 			};
@@ -535,6 +535,7 @@
 				);
 				INFOPLIST_FILE = "BoltsDemoTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zd.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ZDSyncDemo;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZDSyncDemo.app/ZDSyncDemo";
 			};

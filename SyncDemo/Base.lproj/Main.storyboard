@@ -135,10 +135,10 @@
             </objects>
             <point key="canvasLocation" x="44" y="307"/>
         </scene>
-        <!--Promise Controller-->
+        <!--Promise Kit Demo-->
         <scene sceneID="kdb-l8-vNK">
             <objects>
-                <viewController id="s8I-D9-yJQ" customClass="PromiseController" sceneMemberID="viewController">
+                <viewController id="s8I-D9-yJQ" customClass="PromiseKitDemo" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YOG-By-4fN"/>
                         <viewControllerLayoutGuide type="bottom" id="Q9G-ol-o00"/>
@@ -147,11 +147,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Promise" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lq2-Ye-G3p">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lq2-Ye-G3p">
                                 <rect key="frame" x="20" y="114" width="560" height="436"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="0.1280163648" blue="0.1241683616" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
@@ -170,10 +171,10 @@
             </objects>
             <point key="canvasLocation" x="756" y="208"/>
         </scene>
-        <!--GCD-->
+        <!--Demo-->
         <scene sceneID="nBL-3T-hkW">
             <objects>
-                <viewController id="o2o-97-h1H" customClass="GCD" sceneMemberID="viewController">
+                <viewController id="o2o-97-h1H" customClass="GCDDemo" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="D05-p5-eHe"/>
                         <viewControllerLayoutGuide type="bottom" id="pjb-Z8-Oi2"/>
@@ -234,10 +235,10 @@
             </objects>
             <point key="canvasLocation" x="733" y="659"/>
         </scene>
-        <!--Bolts Controller-->
+        <!--Bolts Demo-->
         <scene sceneID="4Yf-DS-1qG">
             <objects>
-                <viewController id="LwH-EM-bpG" customClass="BoltsController" sceneMemberID="viewController">
+                <viewController id="LwH-EM-bpG" customClass="BoltsDemo" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d3l-kl-QFP"/>
                         <viewControllerLayoutGuide type="bottom" id="5Xv-pa-LOw"/>
@@ -245,8 +246,37 @@
                     <view key="view" contentMode="scaleToFill" id="KQk-Eu-tpL">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NuT-Oo-00b">
+                                <rect key="frame" x="40" y="114" width="520" height="436"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PxW-8V-7eq">
+                                        <rect key="frame" x="18" y="18" width="484" height="100"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="Wtk-Bs-7cn"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailingMargin" secondItem="PxW-8V-7eq" secondAttribute="trailing" constant="10" id="em7-hd-bHn"/>
+                                    <constraint firstItem="PxW-8V-7eq" firstAttribute="top" secondItem="NuT-Oo-00b" secondAttribute="topMargin" constant="10" id="qtA-Va-bdE"/>
+                                    <constraint firstItem="PxW-8V-7eq" firstAttribute="leading" secondItem="NuT-Oo-00b" secondAttribute="leadingMargin" constant="10" id="ukm-7o-Dtt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="NuT-Oo-00b" secondAttribute="trailing" constant="20" id="9jc-HH-WOT"/>
+                            <constraint firstItem="NuT-Oo-00b" firstAttribute="top" secondItem="d3l-kl-QFP" secondAttribute="bottom" constant="50" id="CjO-L3-u2w"/>
+                            <constraint firstItem="NuT-Oo-00b" firstAttribute="leading" secondItem="KQk-Eu-tpL" secondAttribute="leadingMargin" constant="20" id="LCD-VP-Huj"/>
+                            <constraint firstItem="5Xv-pa-LOw" firstAttribute="top" secondItem="NuT-Oo-00b" secondAttribute="bottom" constant="50" id="oPe-ro-P9E"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="testView" destination="NuT-Oo-00b" id="h5f-nF-cpx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kax-dr-thM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

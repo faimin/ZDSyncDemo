@@ -17,8 +17,7 @@
 
 @implementation OperationQueue
 
-- (void)dealloc
-{
+- (void)dealloc {
     NSLog(@"释放了");
 }
 
@@ -34,8 +33,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)operationQueueSync
-{
+- (void)operationQueueSync {
     NSOperationQueue *myOperationQueue = [[NSOperationQueue alloc] init];
     myOperationQueue.maxConcurrentOperationCount = 10;
     
@@ -80,8 +78,7 @@
     NSLog(@"都下载完毕");
 }
 
-- (void)operation
-{
+- (void)operation {
 
 }
 

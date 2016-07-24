@@ -215,9 +215,6 @@ id pmk_safely_call_block(id frock, id result) {
 #endif
 
 - (PMKPromise *(^)(id))then {
-    // 此处then本身就是一个block：（PMKPromise *(^then)(id param)），此方法类似于getter方法
-    // 返回一个`(PMKPromise *(^)(id))`类型的block，这个block执行后，返回一个PMKPromise
-    // 下面整个都是一个then `block`，当执行then的时候会调用 `self.thenOn(dispatch_get_main_queue(), block)`
     return ^(id block){
         return self.thenOn(dispatch_get_main_queue(), block);
     };
