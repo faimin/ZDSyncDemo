@@ -78,9 +78,6 @@
     NSLog(@"都下载完毕");
 }
 
-- (void)operation {
-
-}
 
 /*
 #pragma mark - Navigation

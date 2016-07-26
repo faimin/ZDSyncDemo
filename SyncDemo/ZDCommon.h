@@ -29,8 +29,8 @@ static inline NSArray *images(){
 #endif /* ZDCommon_h */
 
 
-#define weakify(_objc) __weak __typeof(&*_objc)weak##_objc = _objc;
-#define strongify(_objc) __strong __typeof(&*weak##_objc)_objc = weak##_objc;
+#define zd_weakify(_objc) __weak __typeof(&*_objc)weak##_objc = _objc;
+#define zd_strongify(_objc) __strong __typeof(&*weak##_objc)_objc = weak##_objc;
 
 
 
