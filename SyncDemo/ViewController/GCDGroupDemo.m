@@ -6,17 +6,14 @@
 //  Copyright © 2016年 ZD. All rights reserved.
 //
 
-#import "GCDDemo.h"
+#import "GCDGroupDemo.h"
 #import "ZDCommon.h"
 
-@interface GCDDemo ()
-
+@interface GCDGroupDemo ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (assign) NSUInteger count;
-
 @end
 
-@implementation GCDDemo
+@implementation GCDGroupDemo
 
 - (void)dealloc {
     NSLog(@"释放了");
@@ -99,8 +96,9 @@
         NSLog(@"第2张图");
     });
     
+    // 此方法必须是自定义的queue
     dispatch_group_notify(group, queue, ^{
-        NSLog(@"下载完毕");
+        NSLog(@"所有图片全都下载完毕");
     });
     
     dispatch_group_enter(group);

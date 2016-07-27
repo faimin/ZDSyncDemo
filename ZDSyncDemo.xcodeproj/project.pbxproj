@@ -23,7 +23,7 @@
 		BCAC9FBB1B93555100822B5E /* BoltsDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAC9FBA1B93555100822B5E /* BoltsDemoTests.m */; };
 		BCAC9FC71B9356C200822B5E /* ZAFNetWorkService.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAC9FC61B9356C200822B5E /* ZAFNetWorkService.m */; };
 		BCE4F9E41C5A10BF00BBDB03 /* OperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE4F9E31C5A10BF00BBDB03 /* OperationQueue.m */; };
-		BCE4F9E71C5A10D100BBDB03 /* GCDDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE4F9E61C5A10D100BBDB03 /* GCDDemo.m */; };
+		BCE4F9E71C5A10D100BBDB03 /* GCDGroupDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE4F9E61C5A10D100BBDB03 /* GCDGroupDemo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,8 +67,8 @@
 		BCAC9FC61B9356C200822B5E /* ZAFNetWorkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAFNetWorkService.m; sourceTree = "<group>"; };
 		BCE4F9E21C5A10BF00BBDB03 /* OperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationQueue.h; sourceTree = "<group>"; };
 		BCE4F9E31C5A10BF00BBDB03 /* OperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationQueue.m; sourceTree = "<group>"; };
-		BCE4F9E51C5A10D100BBDB03 /* GCDDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDDemo.h; sourceTree = "<group>"; };
-		BCE4F9E61C5A10D100BBDB03 /* GCDDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDDemo.m; sourceTree = "<group>"; };
+		BCE4F9E51C5A10D100BBDB03 /* GCDGroupDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDGroupDemo.h; sourceTree = "<group>"; };
+		BCE4F9E61C5A10D100BBDB03 /* GCDGroupDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDGroupDemo.m; sourceTree = "<group>"; };
 		BCE4F9E81C5A130200BBDB03 /* ZDCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCommon.h; sourceTree = "<group>"; };
 		F89F0378169984B0A47B89B2 /* Pods-ZDSyncDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZDSyncDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZDSyncDemo/Pods-ZDSyncDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,8 +193,8 @@
 				BC5571AE1C51D10800019326 /* PromiseKitDemo.m */,
 				057F095C1D45BA9900B8532F /* RACDemo.h */,
 				057F095D1D45BA9900B8532F /* RACDemo.m */,
-				BCE4F9E51C5A10D100BBDB03 /* GCDDemo.h */,
-				BCE4F9E61C5A10D100BBDB03 /* GCDDemo.m */,
+				BCE4F9E51C5A10D100BBDB03 /* GCDGroupDemo.h */,
+				BCE4F9E61C5A10D100BBDB03 /* GCDGroupDemo.m */,
 				BCE4F9E21C5A10BF00BBDB03 /* OperationQueue.h */,
 				BCE4F9E31C5A10BF00BBDB03 /* OperationQueue.m */,
 				BC75F9CC1D47205200C25BB7 /* RunLoopDemo.h */,
@@ -366,7 +366,7 @@
 				BCE4F9E41C5A10BF00BBDB03 /* OperationQueue.m in Sources */,
 				BC5571AC1C51D04A00019326 /* ZDTableViewController.m in Sources */,
 				BCAC9FC71B9356C200822B5E /* ZAFNetWorkService.m in Sources */,
-				BCE4F9E71C5A10D100BBDB03 /* GCDDemo.m in Sources */,
+				BCE4F9E71C5A10D100BBDB03 /* GCDGroupDemo.m in Sources */,
 				05DA93901CDCF44800DEE384 /* ZDTask.m in Sources */,
 				BCAC9FA11B93555100822B5E /* main.m in Sources */,
 			);
@@ -501,7 +501,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "SyncDemo/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zd.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ZDSyncDemo;
@@ -514,7 +514,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "SyncDemo/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zd.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ZDSyncDemo;

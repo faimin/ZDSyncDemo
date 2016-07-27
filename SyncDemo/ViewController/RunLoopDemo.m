@@ -24,7 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self af];
+    [self runloop];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,44 +42,13 @@
         result = error;
         CFRunLoopStop(CFRunLoopGetMain());
     }];
-    // 阻塞主线程的方法
+    // 阻塞主线程的方法,不推荐
     CFRunLoopRun();
     
     NSLog(@"%@", result);
     NSLog(@"finish");
 }
 
-- (void)af {
-    AFHTTPRequestOperation *operation1 = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:MovieAPI]]];
-    [operation1 setCompletionBlockWithSuccess:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        NSLog(@"%@", [self decodeData:responseObject]);
-    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
-        NSLog(@"%@", error.localizedDescription);
-    }];
-    [operation1 resume];
-    
-    AFHTTPRequestOperation *operation2 = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:WeatherAPI]]];
-    [operation2 setCompletionBlockWithSuccess:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        NSLog(@"%@", [self decodeData:responseObject]);
-    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
-        NSLog(@"%@", error.localizedDescription);
-    }];
-    [operation2 resume];
-    
-    NSArray *operations = [AFHTTPRequestOperation batchOfRequestOperations:@[operation1, operation2] progressBlock:^(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations) {
-        NSLog(@"%ld/%ld", numberOfFinishedOperations, totalNumberOfOperations);
-    } completionBlock:^(NSArray * _Nonnull operations) {
-        NSLog(@"批处理结束");
-    }];
-    
-    [[NSOperationQueue mainQueue] addOperations:operations waitUntilFinished:NO];
-    NSLog(@"打印一下");
-}
-
-- (id)decodeData:(id)data {
-    NSError *error;
-    return [data isKindOfClass:[NSData class]] ? [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error] : data;
-}
 
 
 /*

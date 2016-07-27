@@ -8,15 +8,18 @@
 
 #import "ZDTableViewController.h"
 
-@interface ZDTableViewController ()
+static CGFloat const SectionHeight = 28.0;
 
+@interface ZDTableViewController ()
+@property (nonatomic, assign) CGFloat recordContentOffsetY;
 @end
 
 @implementation ZDTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    // 设置此属性防止一进界面tableview视图就滑动的问题（那时contentOffsetY = -64）
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -28,6 +31,30 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+// 让section跟随滑动
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    // 上拉为正数，下拉为负数
+    CGFloat contentOffsetY = scrollView.contentOffset.y;
+    
+    if (contentOffsetY > 0) {
+        
+        CGFloat padding = MIN(contentOffsetY, SectionHeight);
+        self.tableView.contentInset = UIEdgeInsetsMake(-padding, 0, 0, 0);
+        if (contentOffsetY > self.recordContentOffsetY) {   // 上拉
+            
+        }
+        else {                                              // 下拉
+           
+        }
+    }
+    
+    self.recordContentOffsetY = contentOffsetY;
+}
+
+//- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
+//    self.navigationController.navigationBar.hidden = velocity.y > 0;
+//}
 
 #pragma mark - Table view data source
 

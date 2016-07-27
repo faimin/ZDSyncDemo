@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GCDDemo : UIViewController
+@interface GCDGroupDemo : UIViewController
 
 @end

@@ -100,7 +100,7 @@
                                             <segue destination="9fa-hI-X9w" kind="show" id="taD-9P-XDQ"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GCD" textLabel="9Ue-pd-FN6" style="IBUITableViewCellStyleDefault" id="qja-KM-oUz">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GCDGroup" textLabel="9Ue-pd-FN6" style="IBUITableViewCellStyleDefault" id="qja-KM-oUz">
                                         <rect key="frame" x="0.0" y="224" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qja-KM-oUz" id="2XQ-iE-Ley">
@@ -142,7 +142,7 @@
                                             <segue destination="6yW-3J-B4y" kind="show" id="AUq-kV-DjZ"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReactiveCocoa" textLabel="JIq-64-97G" style="IBUITableViewCellStyleDefault" id="gns-eh-xCX">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RunLoop" textLabel="JIq-64-97G" style="IBUITableViewCellStyleDefault" id="gns-eh-xCX">
                                         <rect key="frame" x="0.0" y="312" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gns-eh-xCX" id="RrW-F7-bzD">
@@ -212,10 +212,10 @@
             </objects>
             <point key="canvasLocation" x="760" y="-680"/>
         </scene>
-        <!--Demo-->
+        <!--Group Demo-->
         <scene sceneID="nBL-3T-hkW">
             <objects>
-                <viewController id="o2o-97-h1H" customClass="GCDDemo" sceneMemberID="viewController">
+                <viewController id="o2o-97-h1H" customClass="GCDGroupDemo" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="D05-p5-eHe"/>
                         <viewControllerLayoutGuide type="bottom" id="pjb-Z8-Oi2"/>
@@ -262,10 +262,10 @@
             </objects>
             <point key="canvasLocation" x="16" y="1120"/>
         </scene>
-        <!--Demo-->
+        <!--RACDemo-->
         <scene sceneID="bb7-bY-hZ2">
             <objects>
-                <viewController id="6yW-3J-B4y" customClass="RACDemo" sceneMemberID="viewController">
+                <viewController title="RACDemo" id="6yW-3J-B4y" customClass="RACDemo" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sGc-Ug-jeU"/>
                         <viewControllerLayoutGuide type="bottom" id="wDL-iz-Mb3"/>
@@ -278,7 +278,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DER-tX-2Yj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="592" y="1282"/>
+            <point key="canvasLocation" x="780" y="1300"/>
         </scene>
         <!--Operation Queue-->
         <scene sceneID="RLa-DK-cZG">
