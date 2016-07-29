@@ -7,6 +7,7 @@
 // https://github.com/BoltsFramework/Bolts-ObjC
 
 #import "BoltsDemo.h"
+#import <libkern/OSAtomic.h>
 #import <Bolts.h>
 #import "ZAFNetWorkService.h"
 
@@ -23,6 +24,11 @@
     // Do any additional setup after loading the view, typically from a nib.
     [self viewTest];
     
+    volatile int32_t t = 0;
+    bool isOK = OSAtomicCompareAndSwap32Barrier(0, 1, &t);
+    uint32_t m = OSAtomicIncrement32Barrier(&t);    // t+1
+    uint32_t n = OSAtomicDecrement32(&t);           // t-1
+    NSLog(@"%@, t = %d, m = %d, n = %d", isOK ? @"YES" : @"NO", t, m, n);
     
     /**
      1、每个task对象维护着一个属于它的数组（用来盛放回调block），每次task被continueWithBlock：（类似于信号被订阅）后，都会把这个block放入数组callbacks中，用来数据返回时的回调。
@@ -46,7 +52,6 @@
 - (void)viewTest {
     self.testView.layoutMargins = UIEdgeInsetsMake(100, 100, 100, 100);
 //    self.testView.preservesSuperviewLayoutMargins = YES;
-    
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
     view.backgroundColor = [UIColor yellowColor];
