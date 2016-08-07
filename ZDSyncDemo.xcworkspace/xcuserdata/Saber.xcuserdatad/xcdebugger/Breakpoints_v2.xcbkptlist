@@ -41,86 +41,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SyncDemo/ViewController/PromiseKitDemo.m"
-            timestampString = "491498803.646084"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "-promise"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/PromiseKit/objc/PMKPromise.m"
-            timestampString = "491565831.674972"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "490"
-            endingLineNumber = "490"
-            landmarkName = "+new:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/PromiseKit/objc/PMKPromise.m"
-            timestampString = "491563067.357095"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "503"
-            endingLineNumber = "503"
-            landmarkName = "+new:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/PromiseKit/objc/PMKPromise.m"
-            timestampString = "491563073.877568"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "508"
-            endingLineNumber = "508"
-            landmarkName = "+new:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/PromiseKit/objc/PMKPromise.m"
-            timestampString = "491563214.060171"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "449"
-            endingLineNumber = "449"
-            landmarkName = "PMKResolve()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Pods/PromiseKit/objc/PMKPromise.m"
             timestampString = "491563566.212131"
             startingColumnNumber = "9223372036854775807"
@@ -138,7 +58,7 @@
                   moduleName = "ZDSyncDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Saber/MyGit/ModifyThirdLib/ZDSyncDemo/Pods/PromiseKit/objc/PMKPromise.m"
-                  timestampString = "491581753.473335"
+                  timestampString = "492274998.112821"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "263"
@@ -153,7 +73,7 @@
                   moduleName = "ZDSyncDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Saber/MyGit/ModifyThirdLib/ZDSyncDemo/Pods/PromiseKit/objc/PMKPromise.m"
-                  timestampString = "491581753.473483"
+                  timestampString = "492274998.113083"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "263"
@@ -185,54 +105,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SyncDemo/ViewController/PromiseKitDemo.m"
-            timestampString = "491581746.159423"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "-promise"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__25-[PromiseKitDemo promise]_block_invoke"
-                  moduleName = "ZDSyncDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Saber/MyGit/ModifyThirdLib/ZDSyncDemo/SyncDemo/ViewController/PromiseKitDemo.m"
-                  timestampString = "491581753.480323"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "86">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__25-[PromiseKitDemo promise]_block_invoke_2"
-                  moduleName = "ZDSyncDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Saber/MyGit/ModifyThirdLib/ZDSyncDemo/SyncDemo/ViewController/PromiseKitDemo.m"
-                  timestampString = "491581753.48046"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Pods/PromiseKit/objc/PMKPromise.m"
             timestampString = "491583563.392667"
             startingColumnNumber = "9223372036854775807"
@@ -249,13 +121,188 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SyncDemo/ViewController/PromiseKitDemo.m"
-            timestampString = "491583582.671376"
+            filePath = "Pods/PromiseKit/objc/PMKPromise.m"
+            timestampString = "492194231.914961"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "-promise"
+            startingLineNumber = "291"
+            endingLineNumber = "291"
+            landmarkName = "-resolved:pending:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/PromiseKit/objc/PMKPromise.m"
+            timestampString = "492196858.200236"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
+            landmarkName = "-resolved:pending:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__31-[PMKPromise resolved:pending:]_block_invoke_4"
+                  moduleName = "ZDSyncDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Saber/MyGit/ModifyThirdLib/ZDSyncDemo/Pods/PromiseKit/objc/PMKPromise.m"
+                  timestampString = "492274998.115499"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "278"
+                  endingLineNumber = "278"
+                  offsetFromSymbolStart = "110">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__31-[PMKPromise resolved:pending:]_block_invoke_5"
+                  moduleName = "ZDSyncDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Saber/MyGit/ModifyThirdLib/ZDSyncDemo/Pods/PromiseKit/objc/PMKPromise.m"
+                  timestampString = "492274998.115626"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "279"
+                  endingLineNumber = "279"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/PromiseKit/objc/PMKPromise.m"
+            timestampString = "492197034.939674"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "273"
+            endingLineNumber = "273"
+            landmarkName = "-resolved:pending:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/PromiseKit/objc/PMKPromise.m"
+            timestampString = "492197037.621569"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "260"
+            endingLineNumber = "260"
+            landmarkName = "-resolved:pending:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/PromiseKit/objc/PMKPromise.m"
+            timestampString = "492197256.712844"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "283"
+            endingLineNumber = "283"
+            landmarkName = "-resolved:pending:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/PromiseKit/objc/PMKPromise.m"
+            timestampString = "492199111.428465"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "505"
+            endingLineNumber = "505"
+            landmarkName = "+new:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__18+[PMKPromise new:]_block_invoke"
+                  moduleName = "ZDSyncDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Saber/MyGit/ModifyThirdLib/ZDSyncDemo/Pods/PromiseKit/objc/PMKPromise.m"
+                  timestampString = "492274998.118311"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "505"
+                  endingLineNumber = "505"
+                  offsetFromSymbolStart = "297">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_.295"
+                  moduleName = "ZDSyncDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Saber/MyGit/ModifyThirdLib/ZDSyncDemo/Pods/PromiseKit/objc/PMKPromise.m"
+                  timestampString = "492274998.118431"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "505"
+                  endingLineNumber = "505"
+                  offsetFromSymbolStart = "42">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.296"
+                  moduleName = "ZDSyncDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Saber/MyGit/ModifyThirdLib/ZDSyncDemo/Pods/PromiseKit/objc/PMKPromise.m"
+                  timestampString = "492274998.118549"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "505"
+                  endingLineNumber = "505"
+                  offsetFromSymbolStart = "29">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SyncDemo/ViewController/PromiseKitDemo.m"
+            timestampString = "492257241.544351"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-when"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

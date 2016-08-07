@@ -21,6 +21,7 @@
     // Do any additional setup after loading the view.
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self promise];
+    [self when];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,6 +49,28 @@
     
     promise.then(^(id value){
         NSLog(@"2--->%@", @"第二次");
+    });
+}
+
+- (void)when {
+    PMKPromise *promise1 = [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
+        [[ZAFNetWorkService shareInstance] requestWithURL:MovieAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
+            fulfill(responseObject);
+        } failure: ^(NSError *error) {
+            reject(error);
+        }];
+    }];
+
+    PMKPromise *promise2 = [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
+        [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
+            fulfill(responseObject);
+        } failure: ^(NSError *error) {
+            reject(error);
+        }];
+    }];
+    
+    [PMKPromise when:@[promise1, promise2]].then(^(id value){
+        NSLog(@"%@", value);
     });
 }
 
