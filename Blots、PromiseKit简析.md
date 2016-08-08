@@ -17,7 +17,7 @@
             if (PMKGetResult(this))
                 return PMKLog(@"PromiseKit: Warning: Promise already resolved");
 
-            PMKResolve(this, result); // (7) result为用户在`new:`方法中返回的数据结果,而this则是上面一开始时初始化的那个promise
+            PMKResolve(this, result); // (7) result为用户在`new:`方法中返回的数据结果,而this则是上面一开始时初始化的那个promise. 执行到这里后接下来会到(8),回调到(9)那个block,这个block中会遍历`handlers`数组中的`handler()` block, 
         });
     } @catch (id e) {
         // at this point, no pointer to the Promise has been provided
@@ -52,6 +52,29 @@
 
         block(fulfiller, rejecter);                   // (5-3) 把成功和失败的block作为参数，执行回调原任务（e.g demo中的网络请求任务）
     }];
+}
+
+static void PMKResolve(PMKPromise *this, id result) {
+    void (^set)(id) = ^(id r){ // (9) handle回调执行(10)
+        NSArray *handlers = PMKSetResult(this, r);
+        for (void (^handler)(id) in handlers)
+            handler(r);
+    };
+
+    if (IsPromise(result)) {
+        PMKPromise *next = result;
+        dispatch_barrier_sync(next->_promiseQueue, ^{
+            id nextResult = next->_result;
+            
+            if (nextResult == nil) {  // ie. pending
+                [next->_handlers addObject:^(id o){
+                    PMKResolve(this, o);
+                }];
+            } else
+                set(nextResult);
+        });
+    } else
+        set(result); // (8) 
 }
 ```
 调用`new:`方法时会调用`promiseWithResolver:`方法，在里面进行一些初始化`promise`的工作：创建了一个GCD并发队列和一个数组，并立即回调`new:`后面的那个参数`block`，即：立即执行，生成一个成功（fulfiller）和失败（rejecter）的block，这个block将由用户控制进行回调操作。
@@ -90,11 +113,11 @@
             });
         };
     }
-    pending:^(id result, PMKPromise *next, dispatch_queue_t q, id block, void (^resolve)(id)) {
+    pending:^(id result, PMKPromise *next, dispatch_queue_t q, id block, void (^resolve)(id)) {  
         if (IsError(result))
             PMKResolve(next, result);
         else dispatch_async(q, ^{
-            resolve(pmk_safely_call_block(block, result));
+            resolve(pmk_safely_call_block(block, result));  // (11)
         });
     }];
 }
@@ -109,11 +132,8 @@
         if ((result = _result)) // 有结果的情况下直接返回
             return;
 
-        callBlock = ^(dispatch_queue_t q, id block) {
+        callBlock = ^(dispatch_queue_t q, id block) { // 此block在`thenOn:`方法赋值时进行回调
 
-            // HACK we seem to expose some bug in ARC where this block can
-            // be an NSStackBlock which then gets deallocated by the time
-            // we get around to using it. So we force it to be malloc'd.
             block = [block copy];
 
             __block PMKPromise *next = nil;
@@ -125,11 +145,11 @@
                 __block PMKPromiseFulfiller resolver;
                 next = [PMKPromise new:^(PMKPromiseFulfiller fulfill, PMKPromiseRejecter reject) {
                     resolver = ^(id o){
-                        if (IsError(o)) reject(o); else fulfill(o);
+                        if (IsError(o)) reject(o); else fulfill(o); // (12)
                     };
                 }];
                 [_handlers addObject:^(id value){
-                    mkpendingCallback(value, next, q, block, resolver);
+                    mkpendingCallback(value, next, q, block, resolver); // (10)
                 }];
             });
             
@@ -137,16 +157,11 @@
             // 1) `-thenOn` read it and decided which block to return; and
             // 2) the call to the block.
 
-            return next ?: mkresolvedCallback(result)(q, block);
+            return next ?: mkresolvedCallback(result)(q, block);  // (2) 如果`next` promise没有生成,则用以前的参数再执行一次. `mkresolvedCallback(result)`返回一个`PMKResolveOnQueueBlock`类型的block`(在这里就相当于生成了一个callBlock),然后立即调用,生成`PMKPromise`类型的`next`,以供后面的链式调用.
         };
     });
 
-    // We could just always return the above block, but then every caller would
-    // trigger a barrier_sync on the promise queue. Instead, if we know that the
-    // promise is resolved (since that makes it immutable), we can return a simpler
-    // block that doesn't use a barrier in those cases.
-
-    return callBlock ?: mkresolvedCallback(result); // callBlock存在,说明result为nil,现在还没有结果;否则就执行后面的`mkresolvedCallback()` block.
+    return callBlock ?: mkresolvedCallback(result); // (1) callBlock存在,说明result为nil,现在还没有结果;否则就执行后面的`mkresolvedCallback()` block.
 }
 ```
 > 这个方法看上去很复杂，仔细看看,函数的形参其实就是2个block，一个是resolved的block，还有一个是pending的block。当一个promise经历过resolved之后，可能是fulfill，也可能是reject，之后生成next新的promise，传入到下一个then中，并且状态会变成pending。上面代码中第一个return，如果next为nil，那么意味着promise没有生成，这是会再调用一次mkresolvedCallback，并传入参数result，生成的PMKResolveOnQueueBlock，再次传入(q, block)，直到next的promise生成，并把pendingCallback存入到handler当中。这个handler存了所有待执行的block，如果把这个数组里面的block都执行，那么就相当于依次完成了上面的所有异步操作。第二个return是在callblock为nil的时候，还会再调一次mkresolvedCallback(result)，保证一定要生成next的promise。
