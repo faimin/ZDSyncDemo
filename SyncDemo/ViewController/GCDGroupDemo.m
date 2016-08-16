@@ -71,6 +71,7 @@
     });
 }
 
+// 不会阻塞主线程
 - (void)GCDSync2 {
     zd_weakify(self)
     dispatch_queue_t queue = dispatch_queue_create("myQueue2", DISPATCH_QUEUE_CONCURRENT);
@@ -110,6 +111,8 @@
         dispatch_group_leave(group);
         NSLog(@"第3张图");
     });
+    
+    NSLog(@"最后一行");
 }
 
 

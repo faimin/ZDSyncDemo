@@ -18,7 +18,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self semaphore];
+    
+    // 信号量会阻塞线程,所以在子线程处理
+    dispatch_queue_t myQueue = dispatch_queue_create("MyQueue.zd", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_async(myQueue, ^{
+        //[self semaphore];
+        [self semaphoreTempWithResult:^(id result) {
+            NSLog(@"回调成功");
+        }];
+    });
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,32 +36,54 @@
 
 - (void)semaphore {
     NSMutableArray *allDatas = [[NSMutableArray alloc] init];
-    dispatch_queue_t queue = dispatch_queue_create("ZD.Queue", DISPATCH_QUEUE_CONCURRENT);
     
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    
+    NSURLSessionDataTask *task1 = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:MovieAPI] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        [allDatas addObject:[self parase:data]];
+        dispatch_semaphore_signal(semaphore);
+    }];
+    [task1 resume];
+    
+    NSURLSessionDataTask *task2 = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:WeatherAPI] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        [allDatas addObject:[self parase:data]];
+        dispatch_semaphore_signal(semaphore);
+    }];
+    [task2 resume];
+    
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    
+    NSLog(@"总数据:\n%@", allDatas);
+}
+
+- (void)semaphoreTempWithResult:(void(^)(id result))block {
+    NSMutableArray *allDatas = [[NSMutableArray alloc] init];
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    
     [[ZAFNetWorkService shareInstance] requestWithURL:MovieAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
         [allDatas addObject:responseObject];
         dispatch_semaphore_signal(semaphore);
     } failure: ^(NSError *error) {
         dispatch_semaphore_signal(semaphore);
     }];
-//    dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-//    dispatch_async(queue, ^{
-//    });
-    
+
     [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
         [allDatas addObject:responseObject];
         dispatch_semaphore_signal(semaphore);
     } failure: ^(NSError *error) {
         dispatch_semaphore_signal(semaphore);
     }];
-//    dispatch_async(queue, ^{
-//    });
     
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     
-    NSLog(@"%@", allDatas);
+    block(allDatas);
+}
+
+- (id)parase:(NSData *)jsonData {
+    NSError *error;
+    return [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
 }
 
 /*
