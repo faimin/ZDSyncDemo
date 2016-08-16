@@ -28,7 +28,7 @@
 }
 
 - (void)rac {
-    RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+    RACSignal *signal1 = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         [[ZAFNetWorkService shareInstance] requestWithURL:MovieAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
             [subscriber sendNext:responseObject];
             [subscriber sendCompleted];
@@ -38,11 +38,26 @@
         }];
         
         return [RACDisposable disposableWithBlock:^{
-            NSLog(@"异步请求结束了");
+            NSLog(@"异步请求1结束了");
         }];
     }];
     
-    [signal subscribeNext:^(id x) {
+    RACSignal *signal2 = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
+            [subscriber sendNext:responseObject];
+            [subscriber sendCompleted];
+        } failure: ^(NSError *error) {
+            [subscriber sendError:error];
+            [subscriber sendCompleted];
+        }];
+        
+        return [RACDisposable disposableWithBlock:^{
+            NSLog(@"异步请求2结束了");
+        }];
+    }];
+    
+    // 先拼接后收集
+    [[[signal1 concat:signal2] collect] subscribeNext:^(NSArray<NSDictionary *> *x) {
         NSLog(@"%@", x);
     }];
 }

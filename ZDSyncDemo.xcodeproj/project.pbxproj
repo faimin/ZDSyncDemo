@@ -22,6 +22,7 @@
 		BCAC9FAF1B93555100822B5E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCAC9FAD1B93555100822B5E /* LaunchScreen.xib */; };
 		BCAC9FBB1B93555100822B5E /* BoltsDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAC9FBA1B93555100822B5E /* BoltsDemoTests.m */; };
 		BCAC9FC71B9356C200822B5E /* ZAFNetWorkService.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAC9FC61B9356C200822B5E /* ZAFNetWorkService.m */; };
+		BCC64A5A1D632FB000E95FB6 /* SemaphoreDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC64A591D632FB000E95FB6 /* SemaphoreDemo.m */; };
 		BCE4F9E41C5A10BF00BBDB03 /* OperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE4F9E31C5A10BF00BBDB03 /* OperationQueue.m */; };
 		BCE4F9E71C5A10D100BBDB03 /* GCDGroupDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE4F9E61C5A10D100BBDB03 /* GCDGroupDemo.m */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,8 @@
 		BCAC9FBA1B93555100822B5E /* BoltsDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoltsDemoTests.m; sourceTree = "<group>"; };
 		BCAC9FC51B9356C200822B5E /* ZAFNetWorkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAFNetWorkService.h; sourceTree = "<group>"; };
 		BCAC9FC61B9356C200822B5E /* ZAFNetWorkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAFNetWorkService.m; sourceTree = "<group>"; };
+		BCC64A581D632FB000E95FB6 /* SemaphoreDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemaphoreDemo.h; sourceTree = "<group>"; };
+		BCC64A591D632FB000E95FB6 /* SemaphoreDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemaphoreDemo.m; sourceTree = "<group>"; };
 		BCE4F9E21C5A10BF00BBDB03 /* OperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationQueue.h; sourceTree = "<group>"; };
 		BCE4F9E31C5A10BF00BBDB03 /* OperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationQueue.m; sourceTree = "<group>"; };
 		BCE4F9E51C5A10D100BBDB03 /* GCDGroupDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDGroupDemo.h; sourceTree = "<group>"; };
@@ -197,6 +200,8 @@
 				BCE4F9E61C5A10D100BBDB03 /* GCDGroupDemo.m */,
 				BCE4F9E21C5A10BF00BBDB03 /* OperationQueue.h */,
 				BCE4F9E31C5A10BF00BBDB03 /* OperationQueue.m */,
+				BCC64A581D632FB000E95FB6 /* SemaphoreDemo.h */,
+				BCC64A591D632FB000E95FB6 /* SemaphoreDemo.m */,
 				BC75F9CC1D47205200C25BB7 /* RunLoopDemo.h */,
 				BC75F9CD1D47205200C25BB7 /* RunLoopDemo.m */,
 				05DA938E1CDCF44800DEE384 /* ZDTask.h */,
@@ -369,6 +374,7 @@
 				BCE4F9E71C5A10D100BBDB03 /* GCDGroupDemo.m in Sources */,
 				05DA93901CDCF44800DEE384 /* ZDTask.m in Sources */,
 				BCAC9FA11B93555100822B5E /* main.m in Sources */,
+				BCC64A5A1D632FB000E95FB6 /* SemaphoreDemo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
