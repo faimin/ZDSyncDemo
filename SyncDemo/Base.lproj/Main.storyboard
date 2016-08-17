@@ -11,6 +11,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zpf-DN-Iq5" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TCg-j9-IgK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -294,8 +295,26 @@
                     <view key="view" contentMode="scaleToFill" id="LOX-xz-DKA">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gOo-uE-xmu">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.84705882349999995" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="gOo-uE-xmu" firstAttribute="top" secondItem="KMK-mx-1pG" secondAttribute="bottom" id="FVP-Uw-vdn"/>
+                            <constraint firstItem="ZIE-77-xuS" firstAttribute="top" secondItem="gOo-uE-xmu" secondAttribute="bottom" id="VD0-o1-vtJ"/>
+                            <constraint firstAttribute="trailing" secondItem="gOo-uE-xmu" secondAttribute="trailing" id="gjw-p1-aZX"/>
+                            <constraint firstItem="gOo-uE-xmu" firstAttribute="leading" secondItem="LOX-xz-DKA" secondAttribute="leading" id="vtb-0V-vbO"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="gOo-uE-xmu" id="svx-Ld-4Rp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Wa-GA-9Me" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
