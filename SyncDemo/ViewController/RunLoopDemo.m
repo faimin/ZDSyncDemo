@@ -49,7 +49,28 @@
     NSLog(@"finish");
 }
 
+static void runLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void *info)
+{
+    
+}
 
+- (void)test {
+    CFRunLoopObserverContext context = {
+        0,
+        (__bridge void *)self,
+        &CFRetain,
+        &CFRelease,
+        NULL
+    };
+    CFRunLoopObserverRef observer = CFRunLoopObserverCreate(kCFAllocatorDefault,
+                            kCFRunLoopAllActivities,
+                            YES,
+                            0,
+                            &runLoopObserverCallBack,
+                            &context);
+    CFRunLoopAddObserver(CFRunLoopGetCurrent(), observer, kCFRunLoopCommonModes);
+    
+}
 
 /*
 #pragma mark - Navigation
