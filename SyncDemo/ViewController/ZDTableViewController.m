@@ -34,22 +34,30 @@ static CGFloat const SectionHeight = 28.0;
 
 // 让section跟随滑动
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+#if 1
     // 上拉为正数，下拉为负数
     CGFloat contentOffsetY = scrollView.contentOffset.y;
-    
     if (contentOffsetY > 0) {
-        
         CGFloat padding = MIN(contentOffsetY, SectionHeight);
         self.tableView.contentInset = UIEdgeInsetsMake(-padding, 0, 0, 0);
         if (contentOffsetY > self.recordContentOffsetY) {   // 上拉
             
         }
         else {                                              // 下拉
-           
+            
         }
     }
-    
     self.recordContentOffsetY = contentOffsetY;
+    
+#else
+    
+    if (contentOffsetY <= SectionHeight && contentOffsetY >= 0) {
+        scrollView.contentInset = UIEdgeInsetsMake(-contentOffsetY, 0, 0, 0);
+    }
+    else if (contentOffsetY >= SectionHeight) {
+        scrollView.contentInset = UIEdgeInsetsMake(-SectionHeight, 0, 0, 0);
+    }
+#endif
 }
 
 //- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
