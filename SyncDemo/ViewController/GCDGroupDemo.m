@@ -23,8 +23,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-//    [self GCDSync1];
+    //[self GCDSync1];
     [self GCDSync2];
+    //[self GCDSync3];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,32 +75,40 @@
 // 不会阻塞主线程
 - (void)GCDSync2 {
     zd_weakify(self)
+    
+    NSMutableArray *allDatas = [[NSMutableArray alloc] init];
+    
     dispatch_queue_t queue = dispatch_queue_create("myQueue2", DISPATCH_QUEUE_CONCURRENT);
     dispatch_group_t group = dispatch_group_create();
     
-    dispatch_group_enter(group);
-    NSData *data1 = [NSData dataWithContentsOfURL:[NSURL URLWithString:images()[0]]];
-    UIImage *image1 = [UIImage imageWithData:data1];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        zd_strongify(self)
-        self.imageView.image = image1;
-        dispatch_group_leave(group);
-        NSLog(@"第1张图");
-    });
     
     dispatch_group_enter(group);
-    NSData *data2 = [NSData dataWithContentsOfURL:[NSURL URLWithString:images()[1]]];
-    UIImage *image2 = [UIImage imageWithData:data2];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        zd_strongify(self)
-        self.imageView.image = image2;
-        dispatch_group_leave(group);
-        NSLog(@"第2张图");
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSURLSessionDataTask *task1 = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:MovieAPI] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            [allDatas addObject:[self parase:data]];
+            dispatch_group_leave(group);
+            NSLog(@"第1张图");
+        }];
+        [task1 resume];
     });
+    
+    
+    dispatch_group_enter(group);
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSURLSessionDataTask *task2 = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:WeatherAPI] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            [allDatas addObject:[self parase:data]];
+            dispatch_group_leave(group);
+            NSLog(@"第二个请求结束");
+        }];
+        [task2 resume];
+    });
+    
     
     // 此方法必须是自定义的queue
     dispatch_group_notify(group, queue, ^{
-        NSLog(@"所有图片全都下载完毕");
+        NSLog(@"所有图片和网络请求全都下载完毕");
     });
     
     dispatch_group_enter(group);
@@ -115,6 +124,43 @@
     NSLog(@"最后一行");
 }
 
+
+- (void)GCDSync3 {
+    zd_weakify(self)
+    dispatch_queue_t targetQueue = dispatch_queue_create("targetQueue", DISPATCH_QUEUE_SERIAL);
+    
+    dispatch_queue_t queue1 = dispatch_queue_create("queue1", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_queue_t queue2 = dispatch_queue_create("queue2", DISPATCH_QUEUE_CONCURRENT);
+    /// 目标队列：http://www.tuicool.com/articles/feqQvmj
+    /// 每一个你创建的队列都必须有一个目标队列。默认情况下， 是优先级为 DISPATCH_QUEUE_PRIORITY_DEFAULT 的全局并发队列。
+    /// 队列里每一个准备好要执行的block，将会被重新加入到这个队列的目标队列里去执行。
+    /// 队列会在他的目标队列上执行任务
+    dispatch_set_target_queue(queue1, targetQueue);
+    dispatch_set_target_queue(queue2, targetQueue);
+    
+    NSData *data1 = [NSData dataWithContentsOfURL:[NSURL URLWithString:images()[0]]];
+    UIImage *image1 = [UIImage imageWithData:data1];
+    dispatch_async(queue1, ^{
+        zd_strongify(self)
+        self.imageView.image = image1;
+        NSLog(@"第1张图");
+    });
+    
+    NSData *data2 = [NSData dataWithContentsOfURL:[NSURL URLWithString:images()[1]]];
+    UIImage *image2 = [UIImage imageWithData:data2];
+    dispatch_async(queue2, ^{
+        zd_strongify(self)
+        self.imageView.image = image2;
+        NSLog(@"第2张图");
+    });
+}
+
+#pragma mark - Private Method
+
+- (id)parase:(NSData *)jsonData {
+    NSError *error;
+    return [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
+}
 
 /*
 #pragma mark - Navigation
