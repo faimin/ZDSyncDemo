@@ -25,6 +25,7 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     [self request];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,6 +47,10 @@
         
         [self semaphoreTempWithResult:^(id result) {
             NSLog(@"第二个回调成功");
+        }];
+        
+        [self semaphoreGroupWithResult:^(id result) {
+            NSLog(@"第三个回调成功");
         }];
     });
 }
@@ -75,7 +80,7 @@
     });
 }
 
-// 虽然AF本身就在子线程进行的网络请求,但是当进行结果回调时进行了回到主线程的操作,所以如果下面的网络请求放在主线程处理的话,会发生死锁的情况,谨记!
+// 虽然AF本身就在子线程进行的网络请求,但是当进行结果回调时进行了回到主线程的操作,所以下面的网络请求需要放在子线程操作。如果下面的网络请求放在主线程处理的话,会发生死锁的情况,谨记!
 - (void)semaphoreTempWithResult:(void(^)(id result))block {
     NSMutableArray *allDatas = [[NSMutableArray alloc] init];
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
@@ -97,9 +102,59 @@
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     
+    __unused BOOL isMainThread = [NSThread isMainThread];
     dispatch_sync(dispatch_get_main_queue(), ^{
         block(allDatas);
     });
+}
+
+- (void)semaphoreGroupWithResult:(void(^)(id result))block {
+    
+    NSMutableArray *allDatas = [[NSMutableArray alloc] init];
+    
+    dispatch_group_t zdGroup = dispatch_group_create();
+    
+    dispatch_group_async(zdGroup, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+        
+        [[ZAFNetWorkService shareInstance] requestWithURL:MovieAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
+            [allDatas addObject:responseObject];
+            dispatch_semaphore_signal(semaphore);
+        } failure: ^(NSError *error) {
+            dispatch_semaphore_signal(semaphore);
+        }];
+        
+        [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
+            [allDatas addObject:responseObject];
+            dispatch_semaphore_signal(semaphore);
+        } failure: ^(NSError *error) {
+            dispatch_semaphore_signal(semaphore);
+        }];
+        
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    });
+    
+    /*
+     // 在子线程进行回调
+    dispatch_group_notify(zdGroup, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        block(allDatas);
+        __unused BOOL isMainThread = [NSThread isMainThread];
+        NSLog(@"数组item个数 => %zd", allDatas.count);
+    });
+    */
+    
+    // 回到主线程回调
+    dispatch_group_notify(zdGroup, dispatch_get_main_queue(), ^{
+        block(allDatas);
+        __unused BOOL isMainThread = [NSThread isMainThread];
+        NSLog(@"数组item个数 => %zd", allDatas.count);
+    });
+    
+    BOOL isMainThread = [NSThread isMainThread];
+    NSString *xxx = isMainThread ? @"主线程" : @"子线程";
+    NSLog(@"%@", xxx);
 }
 
 - (id)parase:(NSData *)jsonData {

@@ -132,7 +132,7 @@
     dispatch_queue_t queue1 = dispatch_queue_create("queue1", DISPATCH_QUEUE_CONCURRENT);
     dispatch_queue_t queue2 = dispatch_queue_create("queue2", DISPATCH_QUEUE_CONCURRENT);
     /// 目标队列：http://www.tuicool.com/articles/feqQvmj
-    /// 每一个你创建的队列都必须有一个目标队列。默认情况下， 是优先级为 DISPATCH_QUEUE_PRIORITY_DEFAULT 的全局并发队列。
+    /// 每一个你创建的队列都必须有一个目标队列。默认情况下，是优先级为 DISPATCH_QUEUE_PRIORITY_DEFAULT 的全局并发队列。
     /// 队列里每一个准备好要执行的block，将会被重新加入到这个队列的目标队列里去执行。
     /// 队列会在他的目标队列上执行任务
     dispatch_set_target_queue(queue1, targetQueue);
