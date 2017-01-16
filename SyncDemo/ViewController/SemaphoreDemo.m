@@ -52,6 +52,12 @@
         [self semaphoreGroupWithResult:^(id result) {
             NSLog(@"第三个回调成功");
         }];
+        
+        /**Warning: 有bug,暂时未找到crash原因
+        [self syncExecuteCocurrentRequest:^(id result) {
+            NSLog(@"第四个回调成功");
+        }];
+         */
     });
 }
 
@@ -154,8 +160,40 @@
     
     BOOL isMainThread = [NSThread isMainThread];
     NSString *xxx = isMainThread ? @"主线程" : @"子线程";
-    NSLog(@"%@", xxx);
+    NSLog(@"第三个请求： %@", xxx);
 }
+
+//异步请求顺序执行
+- (void)syncExecuteCocurrentRequest:(void(^)(id result))block {
+    
+    NSMutableArray *allDatas = [[NSMutableArray alloc] init];
+    // 创建一个信号量
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
+    
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);//-1
+    NSURLSessionDataTask *task1 = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:MovieAPI] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        [allDatas addObject:[self parase:data]];
+        dispatch_semaphore_signal(semaphore);
+    }];
+    [task1 resume];
+    
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    NSURLSessionDataTask *task2 = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:WeatherAPI] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        [allDatas addObject:[self parase:data]];
+        dispatch_semaphore_signal(semaphore);
+    }];
+    [task2 resume];
+    
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    NSLog(@"数组item个数 => %zd", allDatas.count);
+    block(allDatas);
+
+    BOOL isMainThread = [NSThread isMainThread];
+    NSString *xxx = isMainThread ? @"主线程" : @"子线程";
+    NSLog(@"第四个请求： %@", xxx);
+}
+
+#pragma mark - Private Method
 
 - (id)parase:(NSData *)jsonData {
     NSError *error;
@@ -164,7 +202,8 @@
 
 - (NSString *)jsonString:(id)temps {
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:temps
-                                                       options:NSJSONWritingPrettyPrinted error:nil];
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:nil];
     NSString *strs = [[NSString alloc] initWithData:jsonData
                                            encoding:NSUTF8StringEncoding];
     return strs;

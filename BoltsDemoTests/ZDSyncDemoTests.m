@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface BoltsDemoTests : XCTestCase
+@interface ZDSyncDemoTests : XCTestCase
 
 @end
 
-@implementation BoltsDemoTests
+@implementation ZDSyncDemoTests
 
 - (void)setUp {
     [super setUp];

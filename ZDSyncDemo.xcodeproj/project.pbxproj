@@ -19,7 +19,7 @@
 		BCAC9FAA1B93555100822B5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCAC9FA81B93555100822B5E /* Main.storyboard */; };
 		BCAC9FAC1B93555100822B5E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCAC9FAB1B93555100822B5E /* Images.xcassets */; };
 		BCAC9FAF1B93555100822B5E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCAC9FAD1B93555100822B5E /* LaunchScreen.xib */; };
-		BCAC9FBB1B93555100822B5E /* BoltsDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAC9FBA1B93555100822B5E /* BoltsDemoTests.m */; };
+		BCAC9FBB1B93555100822B5E /* ZDSyncDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAC9FBA1B93555100822B5E /* ZDSyncDemoTests.m */; };
 		BCAC9FC71B9356C200822B5E /* ZAFNetWorkService.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAC9FC61B9356C200822B5E /* ZAFNetWorkService.m */; };
 		BCC64A5A1D632FB000E95FB6 /* SemaphoreDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC64A591D632FB000E95FB6 /* SemaphoreDemo.m */; };
 		BCE4F9E41C5A10BF00BBDB03 /* OperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE4F9E31C5A10BF00BBDB03 /* OperationQueue.m */; };
@@ -61,7 +61,7 @@
 		BCAC9FAE1B93555100822B5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		BCAC9FB41B93555100822B5E /* ZDSyncDemo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZDSyncDemo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCAC9FB91B93555100822B5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BCAC9FBA1B93555100822B5E /* BoltsDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoltsDemoTests.m; sourceTree = "<group>"; };
+		BCAC9FBA1B93555100822B5E /* ZDSyncDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDSyncDemoTests.m; sourceTree = "<group>"; };
 		BCAC9FC51B9356C200822B5E /* ZAFNetWorkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAFNetWorkService.h; sourceTree = "<group>"; };
 		BCAC9FC61B9356C200822B5E /* ZAFNetWorkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAFNetWorkService.m; sourceTree = "<group>"; };
 		BCC64A581D632FB000E95FB6 /* SemaphoreDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemaphoreDemo.h; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				BCAC9FB81B93555100822B5E /* Supporting Files */,
-				BCAC9FBA1B93555100822B5E /* BoltsDemoTests.m */,
+				BCAC9FBA1B93555100822B5E /* ZDSyncDemoTests.m */,
 			);
 			name = ZDSyncDemoTests;
 			path = BoltsDemoTests;
@@ -380,7 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCAC9FBB1B93555100822B5E /* BoltsDemoTests.m in Sources */,
+				BCAC9FBB1B93555100822B5E /* ZDSyncDemoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
