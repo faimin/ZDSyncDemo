@@ -1,9 +1,9 @@
 # Blots、PromiseKit源码简析
-####一、Bolts:
+#### 一、Bolts:
 `BFTask`原理：
 每个`BFTask`自己都维护着一个任务数组，当task执行`continueWithBlock:`后（会生成一个新的`BFTask`），`continueWithBlock:`带的那个block会被加入到任务数组中，每当有结果返回时，会执行`trySetResult:`方法，这个方法中会拿到task它自己维护的那个任务数组，然后取出其中的所有任务block，然后遍历执行。
 
-####二、Promise:
+#### 二、Promise:
 * 1、首先，让我们看看创建Promise的源码
 
 ```objc
