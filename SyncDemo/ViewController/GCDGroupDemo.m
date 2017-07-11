@@ -76,13 +76,12 @@
 - (void)GCDSync2 {
     zd_weakify(self)
     
-    NSMutableArray *allDatas = [[NSMutableArray alloc] init];
+    NSMutableArray *allDatas = @[].mutableCopy;
     
     dispatch_queue_t queue = dispatch_queue_create("myQueue2", DISPATCH_QUEUE_CONCURRENT);
     dispatch_group_t group = dispatch_group_create();
     
     dispatch_group_enter(group);
-    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSURLSessionDataTask *task1 = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:MovieAPI] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             [allDatas addObject:[self parase:data]];
@@ -94,7 +93,6 @@
     
     
     dispatch_group_enter(group);
-    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSURLSessionDataTask *task2 = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:WeatherAPI] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             [allDatas addObject:[self parase:data]];

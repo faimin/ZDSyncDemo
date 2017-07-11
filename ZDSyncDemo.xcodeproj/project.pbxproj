@@ -24,6 +24,7 @@
 		BCC64A5A1D632FB000E95FB6 /* SemaphoreDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC64A591D632FB000E95FB6 /* SemaphoreDemo.m */; };
 		BCE4F9E41C5A10BF00BBDB03 /* OperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE4F9E31C5A10BF00BBDB03 /* OperationQueue.m */; };
 		BCE4F9E71C5A10D100BBDB03 /* GCDGroupDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE4F9E61C5A10D100BBDB03 /* GCDGroupDemo.m */; };
+		DA6C9D2F1F1320AD004EBA44 /* PthreadJoinDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6C9D2E1F1320AD004EBA44 /* PthreadJoinDemo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		BCE4F9E51C5A10D100BBDB03 /* GCDGroupDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDGroupDemo.h; sourceTree = "<group>"; };
 		BCE4F9E61C5A10D100BBDB03 /* GCDGroupDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDGroupDemo.m; sourceTree = "<group>"; };
 		BCE4F9E81C5A130200BBDB03 /* ZDCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCommon.h; sourceTree = "<group>"; };
+		DA6C9D2D1F1320AD004EBA44 /* PthreadJoinDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PthreadJoinDemo.h; sourceTree = "<group>"; };
+		DA6C9D2E1F1320AD004EBA44 /* PthreadJoinDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PthreadJoinDemo.m; sourceTree = "<group>"; };
 		F89F0378169984B0A47B89B2 /* Pods-ZDSyncDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZDSyncDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZDSyncDemo/Pods-ZDSyncDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -201,6 +204,8 @@
 				BCC64A591D632FB000E95FB6 /* SemaphoreDemo.m */,
 				BC75F9CC1D47205200C25BB7 /* RunLoopDemo.h */,
 				BC75F9CD1D47205200C25BB7 /* RunLoopDemo.m */,
+				DA6C9D2D1F1320AD004EBA44 /* PthreadJoinDemo.h */,
+				DA6C9D2E1F1320AD004EBA44 /* PthreadJoinDemo.m */,
 				05DA938E1CDCF44800DEE384 /* ZDTask.h */,
 				05DA938F1CDCF44800DEE384 /* ZDTask.m */,
 			);
@@ -255,7 +260,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = ZD;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = ZD;
 				TargetAttributes = {
 					BCAC9F9A1B93555100822B5E = {
@@ -361,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA6C9D2F1F1320AD004EBA44 /* PthreadJoinDemo.m in Sources */,
 				BCAC9FA71B93555100822B5E /* BoltsDemo.m in Sources */,
 				BC5571AF1C51D10800019326 /* PromiseKitDemo.m in Sources */,
 				BCAC9FA41B93555100822B5E /* AppDelegate.m in Sources */,
@@ -429,8 +435,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -453,7 +461,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -474,8 +482,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -491,7 +501,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
