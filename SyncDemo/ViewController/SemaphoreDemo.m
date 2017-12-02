@@ -53,11 +53,10 @@
             NSLog(@"第三个回调成功");
         }];
         
-        /**Warning: 有bug,暂时未找到crash原因
         [self syncExecuteCocurrentRequest:^(id result) {
             NSLog(@"第四个回调成功");
         }];
-         */
+        
     });
 }
 
@@ -154,13 +153,10 @@
     // 回到主线程回调
     dispatch_group_notify(zdGroup, dispatch_get_main_queue(), ^{
         block(allDatas);
-        __unused BOOL isMainThread = [NSThread isMainThread];
-        NSLog(@"数组item个数 => %zd", allDatas.count);
+        NSLog(@"第三个结果数组item个数 => %zd", allDatas.count);
     });
     
-    BOOL isMainThread = [NSThread isMainThread];
-    NSString *xxx = isMainThread ? @"主线程" : @"子线程";
-    NSLog(@"第三个请求： %@", xxx);
+    NSLog(@"第三个请求:%@", [NSThread isMainThread] ? @"主线程" : @"子线程");
 }
 
 //异步请求顺序执行
@@ -168,29 +164,26 @@
     
     NSMutableArray *allDatas = [[NSMutableArray alloc] init];
     // 创建一个信号量
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
-    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);//-1
     NSURLSessionDataTask *task1 = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:MovieAPI] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         [allDatas addObject:[self parase:data]];
         dispatch_semaphore_signal(semaphore);
     }];
     [task1 resume];
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);  //-1
     
-    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     NSURLSessionDataTask *task2 = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:WeatherAPI] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         [allDatas addObject:[self parase:data]];
         dispatch_semaphore_signal(semaphore);
     }];
     [task2 resume];
-    
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-    NSLog(@"数组item个数 => %zd", allDatas.count);
+    
+    NSLog(@"第四个结果数组item个数 => %zd", allDatas.count);
+    NSLog(@"第四个请求:%@", [NSThread isMainThread] ? @"主线程" : @"子线程");
+    
     block(allDatas);
-
-    BOOL isMainThread = [NSThread isMainThread];
-    NSString *xxx = isMainThread ? @"主线程" : @"子线程";
-    NSLog(@"第四个请求： %@", xxx);
 }
 
 #pragma mark - Private Method
