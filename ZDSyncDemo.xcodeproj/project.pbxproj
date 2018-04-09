@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		057F095E1D45BA9900B8532F /* RACDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 057F095D1D45BA9900B8532F /* RACDemo.m */; };
 		05DA93901CDCF44800DEE384 /* ZDTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DA938F1CDCF44800DEE384 /* ZDTask.m */; };
+		109C0F2BB922F4658281A45A /* libPods-ZDSyncDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EAF51C14179BC74C2471A40 /* libPods-ZDSyncDemoTests.a */; };
 		6BCF7C59AEB3A3A99E6703C4 /* libPods-ZDSyncDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4E89B1A53144A5E776514F /* libPods-ZDSyncDemo.a */; };
 		BC5571AC1C51D04A00019326 /* ZDTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5571AB1C51D04A00019326 /* ZDTableViewController.m */; };
 		BC5571AF1C51D10800019326 /* PromiseKitDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5571AE1C51D10800019326 /* PromiseKitDemo.m */; };
@@ -43,8 +44,11 @@
 		057F095D1D45BA9900B8532F /* RACDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACDemo.m; sourceTree = "<group>"; };
 		05DA938E1CDCF44800DEE384 /* ZDTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDTask.h; sourceTree = "<group>"; };
 		05DA938F1CDCF44800DEE384 /* ZDTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDTask.m; sourceTree = "<group>"; };
+		424658AB6641BB59012758AE /* Pods-ZDSyncDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZDSyncDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZDSyncDemoTests/Pods-ZDSyncDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		75B7FCBD913712DAEC34136B /* Pods-ZDSyncDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZDSyncDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZDSyncDemo/Pods-ZDSyncDemo.release.xcconfig"; sourceTree = "<group>"; };
 		7B4E89B1A53144A5E776514F /* libPods-ZDSyncDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZDSyncDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EAF51C14179BC74C2471A40 /* libPods-ZDSyncDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZDSyncDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97CF280BB2BCEE42D3158B18 /* Pods-ZDSyncDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZDSyncDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZDSyncDemoTests/Pods-ZDSyncDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC5571AA1C51D04A00019326 /* ZDTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDTableViewController.h; sourceTree = "<group>"; };
 		BC5571AB1C51D04A00019326 /* ZDTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDTableViewController.m; sourceTree = "<group>"; };
 		BC5571AD1C51D10800019326 /* PromiseKitDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromiseKitDemo.h; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				109C0F2BB922F4658281A45A /* libPods-ZDSyncDemoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				7B4E89B1A53144A5E776514F /* libPods-ZDSyncDemo.a */,
+				8EAF51C14179BC74C2471A40 /* libPods-ZDSyncDemoTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -112,6 +118,8 @@
 			children = (
 				F89F0378169984B0A47B89B2 /* Pods-ZDSyncDemo.debug.xcconfig */,
 				75B7FCBD913712DAEC34136B /* Pods-ZDSyncDemo.release.xcconfig */,
+				97CF280BB2BCEE42D3158B18 /* Pods-ZDSyncDemoTests.debug.xcconfig */,
+				424658AB6641BB59012758AE /* Pods-ZDSyncDemoTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -228,8 +236,6 @@
 				BCAC9F971B93555100822B5E /* Sources */,
 				BCAC9F981B93555100822B5E /* Frameworks */,
 				BCAC9F991B93555100822B5E /* Resources */,
-				E9B88C341557445451B90CC9 /* [CP] Embed Pods Frameworks */,
-				5167DDC4A9FD10190F23458C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -244,6 +250,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCAC9FC11B93555100822B5E /* Build configuration list for PBXNativeTarget "ZDSyncDemoTests" */;
 			buildPhases = (
+				A9770D6AA2B0A6E5A1FDF6B5 /* [CP] Check Pods Manifest.lock */,
 				BCAC9FB01B93555100822B5E /* Sources */,
 				BCAC9FB11B93555100822B5E /* Frameworks */,
 				BCAC9FB21B93555100822B5E /* Resources */,
@@ -319,49 +326,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5167DDC4A9FD10190F23458C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZDSyncDemo/Pods-ZDSyncDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7E90B608AF10473B3354A380 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZDSyncDemo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E9B88C341557445451B90CC9 /* [CP] Embed Pods Frameworks */ = {
+		A9770D6AA2B0A6E5A1FDF6B5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZDSyncDemoTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZDSyncDemo/Pods-ZDSyncDemo-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -557,6 +555,7 @@
 		};
 		BCAC9FC21B93555100822B5E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97CF280BB2BCEE42D3158B18 /* Pods-ZDSyncDemoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 36NX5886GJ;
@@ -578,6 +577,7 @@
 		};
 		BCAC9FC31B93555100822B5E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 424658AB6641BB59012758AE /* Pods-ZDSyncDemoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 36NX5886GJ;

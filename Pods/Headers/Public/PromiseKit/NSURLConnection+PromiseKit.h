@@ -1,1 +1,1 @@
-../../../PromiseKit/objc/NSURLConnection+PromiseKit.h
+../../../PromiseKit/Sources/NSURLConnection+PromiseKit.h

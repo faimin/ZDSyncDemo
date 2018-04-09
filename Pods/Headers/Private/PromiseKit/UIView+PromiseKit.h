@@ -1,1 +1,1 @@
-../../../PromiseKit/objc/UIView+PromiseKit.h
+../../../PromiseKit/Sources/UIView+PromiseKit.h

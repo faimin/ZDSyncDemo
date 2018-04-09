@@ -1,1 +1,1 @@
-../../../PromiseKit/objc/UIActionSheet+PromiseKit.h
+../../../PromiseKit/Sources/UIActionSheet+PromiseKit.h

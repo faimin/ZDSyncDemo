@@ -1,17 +1,16 @@
 #import <Foundation/Foundation.h>
 #import "OMGFormURLEncode.h"
 
-static inline NSString *enc(id in, CFStringRef ignore) {
-    return (__bridge_transfer  NSString *) CFURLCreateStringByAddingPercentEscapes(
-        kCFAllocatorDefault,
-        (__bridge CFStringRef)[in description],
-        ignore,
-        CFSTR(":/?&=;+!@#$()',*"),
-        kCFStringEncodingUTF8);
+static inline NSString *enc(id in, NSString *ignore) {
+	NSMutableCharacterSet *allowedSet = [NSMutableCharacterSet characterSetWithCharactersInString:ignore];
+	[allowedSet formUnionWithCharacterSet:[NSCharacterSet URLQueryAllowedCharacterSet]];
+	[allowedSet removeCharactersInString:@":/?&=;+!@#$()',*"];
+
+	return [[in description] stringByAddingPercentEncodingWithAllowedCharacters:allowedSet];
 }
 
-#define enckey(in) enc(in, CFSTR("[]."))
-#define encval(in) enc(in, NULL)
+#define enckey(in) enc(in, @"[]")
+#define encval(in) enc(in, @"")
 
 static NSArray *DoQueryMagic(NSString *key, id value) {
     NSMutableArray *parts = [NSMutableArray new];
@@ -44,7 +43,7 @@ static NSArray *DoQueryMagic(NSString *key, id value) {
 
 NSString *OMGFormURLEncode(NSDictionary *parameters) {
     if (parameters.count == 0)
-        return nil;
+        return @"";
     NSMutableString *queryString = [NSMutableString new];
     NSEnumerator *e = DoQueryMagic(nil, parameters).objectEnumerator;
     for (;;) {

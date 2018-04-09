@@ -1,1 +1,1 @@
-../../../PromiseKit/objc/NSNotificationCenter+PromiseKit.h
+../../../PromiseKit/Sources/NSNotificationCenter+PromiseKit.h

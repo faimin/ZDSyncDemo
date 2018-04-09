@@ -1,1 +1,1 @@
-../../../PromiseKit/objc/PromiseKit/fwd.h
+../../../PromiseKit/Sources/PromiseKit/fwd.h

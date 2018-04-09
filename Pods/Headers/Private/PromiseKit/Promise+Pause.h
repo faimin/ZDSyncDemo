@@ -1,1 +1,1 @@
-../../../PromiseKit/objc/PromiseKit/Promise+Pause.h
+../../../PromiseKit/Sources/PromiseKit/Promise+Pause.h

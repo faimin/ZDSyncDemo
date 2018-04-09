@@ -1,1 +1,1 @@
-../../../PromiseKit/objc/UIViewController+PromiseKit.h
+../../../PromiseKit/Sources/UIViewController+PromiseKit.h

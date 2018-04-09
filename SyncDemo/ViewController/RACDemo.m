@@ -7,7 +7,7 @@
 //
 
 #import "RACDemo.h"
-#import "ReactiveCocoa.h"
+#import <ReactiveObjC/ReactiveObjC.h>
 #import "ZDCommon.h"
 
 @interface RACDemo ()

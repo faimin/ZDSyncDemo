@@ -1,1 +1,1 @@
-../../../PromiseKit/objc/UIAlertView+PromiseKit.h
+../../../PromiseKit/Sources/UIAlertView+PromiseKit.h
