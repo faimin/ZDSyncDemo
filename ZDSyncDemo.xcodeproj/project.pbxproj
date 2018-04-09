@@ -20,13 +20,14 @@
 		BCAC9FAA1B93555100822B5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCAC9FA81B93555100822B5E /* Main.storyboard */; };
 		BCAC9FAC1B93555100822B5E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCAC9FAB1B93555100822B5E /* Images.xcassets */; };
 		BCAC9FAF1B93555100822B5E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCAC9FAD1B93555100822B5E /* LaunchScreen.xib */; };
-		BCAC9FBB1B93555100822B5E /* ZDSyncDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAC9FBA1B93555100822B5E /* ZDSyncDemoTests.m */; };
 		BCAC9FC71B9356C200822B5E /* ZAFNetWorkService.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAC9FC61B9356C200822B5E /* ZAFNetWorkService.m */; };
 		BCC64A5A1D632FB000E95FB6 /* SemaphoreDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC64A591D632FB000E95FB6 /* SemaphoreDemo.m */; };
 		BCE4F9E41C5A10BF00BBDB03 /* OperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE4F9E31C5A10BF00BBDB03 /* OperationQueue.m */; };
 		BCE4F9E71C5A10D100BBDB03 /* GCDGroupDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE4F9E61C5A10D100BBDB03 /* GCDGroupDemo.m */; };
 		DA2BA9851FD253D100F97F03 /* OperationDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2BA9841FD253D100F97F03 /* OperationDemo.m */; };
 		DA6C9D2F1F1320AD004EBA44 /* PthreadJoinDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6C9D2E1F1320AD004EBA44 /* PthreadJoinDemo.m */; };
+		FACB0260207B1A1C0092E1EB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FACB025E207B1A1C0092E1EB /* Info.plist */; };
+		FACB0261207B1A1C0092E1EB /* ZDSyncDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FACB025F207B1A1C0092E1EB /* ZDSyncDemoTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,8 +67,6 @@
 		BCAC9FAB1B93555100822B5E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BCAC9FAE1B93555100822B5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		BCAC9FB41B93555100822B5E /* ZDSyncDemo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZDSyncDemo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BCAC9FB91B93555100822B5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BCAC9FBA1B93555100822B5E /* ZDSyncDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDSyncDemoTests.m; sourceTree = "<group>"; };
 		BCAC9FC51B9356C200822B5E /* ZAFNetWorkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAFNetWorkService.h; sourceTree = "<group>"; };
 		BCAC9FC61B9356C200822B5E /* ZAFNetWorkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAFNetWorkService.m; sourceTree = "<group>"; };
 		BCC64A581D632FB000E95FB6 /* SemaphoreDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemaphoreDemo.h; sourceTree = "<group>"; };
@@ -82,6 +81,8 @@
 		DA6C9D2D1F1320AD004EBA44 /* PthreadJoinDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PthreadJoinDemo.h; sourceTree = "<group>"; };
 		DA6C9D2E1F1320AD004EBA44 /* PthreadJoinDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PthreadJoinDemo.m; sourceTree = "<group>"; };
 		F89F0378169984B0A47B89B2 /* Pods-ZDSyncDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZDSyncDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZDSyncDemo/Pods-ZDSyncDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		FACB025E207B1A1C0092E1EB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FACB025F207B1A1C0092E1EB /* ZDSyncDemoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSyncDemoTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +130,7 @@
 			children = (
 				BCAC9FC41B9356C200822B5E /* ZAFNetWorkService */,
 				BCAC9F9D1B93555100822B5E /* SyncDemo */,
-				BCAC9FB71B93555100822B5E /* ZDSyncDemoTests */,
+				FACB025C207B1A1C0092E1EB /* ZDSyncDemoTests */,
 				BCAC9F9C1B93555100822B5E /* Products */,
 				67CB40CF4FE9F244B9E2A1ED /* Pods */,
 				6679F4A0DB72AC76B01C6EF9 /* Frameworks */,
@@ -165,24 +166,6 @@
 			children = (
 				BCAC9F9F1B93555100822B5E /* Info.plist */,
 				BCAC9FA01B93555100822B5E /* main.m */,
-			);
-			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		BCAC9FB71B93555100822B5E /* ZDSyncDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				BCAC9FB81B93555100822B5E /* Supporting Files */,
-				BCAC9FBA1B93555100822B5E /* ZDSyncDemoTests.m */,
-			);
-			name = ZDSyncDemoTests;
-			path = BoltsDemoTests;
-			sourceTree = "<group>";
-		};
-		BCAC9FB81B93555100822B5E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				BCAC9FB91B93555100822B5E /* Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -223,6 +206,23 @@
 				05DA938F1CDCF44800DEE384 /* ZDTask.m */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		FACB025C207B1A1C0092E1EB /* ZDSyncDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				FACB025D207B1A1C0092E1EB /* Supporting Files */,
+				FACB025F207B1A1C0092E1EB /* ZDSyncDemoTests.m */,
+			);
+			path = ZDSyncDemoTests;
+			sourceTree = "<group>";
+		};
+		FACB025D207B1A1C0092E1EB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FACB025E207B1A1C0092E1EB /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FACB0260207B1A1C0092E1EB /* Info.plist in Resources */,
 				BCAC9FAA1B93555100822B5E /* Main.storyboard in Resources */,
 				BCAC9FAF1B93555100822B5E /* LaunchScreen.xib in Resources */,
 				BCAC9FAC1B93555100822B5E /* Images.xcassets in Resources */,
@@ -371,6 +372,7 @@
 			files = (
 				DA6C9D2F1F1320AD004EBA44 /* PthreadJoinDemo.m in Sources */,
 				BCAC9FA71B93555100822B5E /* BoltsDemo.m in Sources */,
+				FACB0261207B1A1C0092E1EB /* ZDSyncDemoTests.m in Sources */,
 				BC5571AF1C51D10800019326 /* PromiseKitDemo.m in Sources */,
 				BCAC9FA41B93555100822B5E /* AppDelegate.m in Sources */,
 				BC75F9CE1D47205200C25BB7 /* RunLoopDemo.m in Sources */,
@@ -390,7 +392,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCAC9FBB1B93555100822B5E /* ZDSyncDemoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,6 +532,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 36NX5886GJ;
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				INFOPLIST_FILE = "SyncDemo/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -545,6 +547,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 36NX5886GJ;
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				INFOPLIST_FILE = "SyncDemo/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
