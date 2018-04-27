@@ -34,7 +34,6 @@
             [subscriber sendCompleted];
         } failure: ^(NSError *error) {
             [subscriber sendError:error];
-            [subscriber sendCompleted];
         }];
         
         return [RACDisposable disposableWithBlock:^{
@@ -48,7 +47,6 @@
             [subscriber sendCompleted];
         } failure: ^(NSError *error) {
             [subscriber sendError:error];
-            [subscriber sendCompleted];
         }];
         
         return [RACDisposable disposableWithBlock:^{

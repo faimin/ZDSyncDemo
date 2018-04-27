@@ -8,7 +8,6 @@
 
 #import "RunLoopDemo.h"
 #import "ZDCommon.h"
-#import "AFNetworking.h"
 
 @interface RunLoopDemo ()
 

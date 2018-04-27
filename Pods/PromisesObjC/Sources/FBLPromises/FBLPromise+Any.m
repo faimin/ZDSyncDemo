@@ -19,44 +19,91 @@
 #import "FBLPromise+Async.h"
 #import "FBLPromisePrivate.h"
 
-@implementation FBLPromise (AnyAdditions)
-
-+ (instancetype)any:(NSArray *)promises {
-  return [self onQueue:self.defaultDispatchQueue any:promises];
+static NSArray *FBLPromiseCombineValuesAndErrors(NSArray<FBLPromise *> *promises) {
+  NSMutableArray *combinedValuesAndErrors = [[NSMutableArray alloc] init];
+  for (FBLPromise *promise in promises) {
+    if (promise.isFulfilled) {
+      [combinedValuesAndErrors addObject:promise.value ?: [NSNull null]];
+      continue;
+    }
+    if (promise.isRejected) {
+      [combinedValuesAndErrors addObject:promise.error];
+      continue;
+    }
+    assert(!promise.isPending);
+  };
+  return combinedValuesAndErrors;
 }
 
-+ (instancetype)onQueue:(dispatch_queue_t)queue any:(NSArray *)anyPromises {
-  NSParameterAssert(queue);
-  NSAssert(anyPromises.count > 0, @"No promises to observe");
+@implementation FBLPromise (AnyAdditions)
 
-  NSArray *promises = [anyPromises copy];
-  return [FBLPromise onQueue:queue
-                       async:^(FBLPromiseFulfillBlock fulfill, FBLPromiseRejectBlock reject) {
-                         for (id promise in promises) {
-                           if (![promise isKindOfClass:self]) {
-                             fulfill(promise);
-                             return;
-                           }
-                         }
-                         // Subscribe all, but only the first one to resolve will change
-                         // the resulting promise's state.
-                         for (FBLPromise *promise in promises) {
-                           [promise observeOnQueue:queue fulfill:fulfill reject:reject];
-                         }
-                       }];
++ (FBLPromise<NSArray *> *)any:(NSArray *)promises {
+  return [self onQueue:FBLPromise.defaultDispatchQueue any:promises];
+}
+
++ (FBLPromise<NSArray *> *)onQueue:(dispatch_queue_t)queue any:(NSArray *)anyPromises {
+  NSParameterAssert(queue);
+  NSParameterAssert(anyPromises);
+
+  if (anyPromises.count == 0) {
+    return [[FBLPromise alloc] initWithResolution:@[]];
+  }
+  NSMutableArray *promises = [anyPromises mutableCopy];
+  return [FBLPromise
+      onQueue:queue
+        async:^(FBLPromiseFulfillBlock fulfill, FBLPromiseRejectBlock reject) {
+          for (NSUInteger i = 0; i < promises.count; ++i) {
+            id promise = promises[i];
+            if ([promise isKindOfClass:self]) {
+              continue;
+            } else {
+              [promises replaceObjectAtIndex:i
+                                  withObject:[[FBLPromise alloc] initWithResolution:promise]];
+            }
+          }
+          for (FBLPromise *promise in promises) {
+            [promise observeOnQueue:queue
+                fulfill:^(id __unused _) {
+                  // Wait until all are resolved.
+                  for (FBLPromise *promise in promises) {
+                    if (promise.isPending) {
+                      return;
+                    }
+                  }
+                  // If called multiple times, only the first one affects the result.
+                  fulfill(FBLPromiseCombineValuesAndErrors(promises));
+                }
+                reject:^(NSError *error) {
+                  BOOL atLeastOneIsFulfilled = NO;
+                  for (FBLPromise *promise in promises) {
+                    if (promise.isPending) {
+                      return;
+                    }
+                    if (promise.isFulfilled) {
+                      atLeastOneIsFulfilled = YES;
+                    }
+                  }
+                  if (atLeastOneIsFulfilled) {
+                    fulfill(FBLPromiseCombineValuesAndErrors(promises));
+                  } else {
+                    reject(error);
+                  }
+                }];
+          }
+        }];
 }
 
 @end
 
 @implementation FBLPromise (DotSyntax_AnyAdditions)
 
-+ (FBLPromise * (^)(NSArray *))any {
++ (FBLPromise<NSArray *> * (^)(NSArray *))any {
   return ^(NSArray *promises) {
     return [self any:promises];
   };
 }
 
-+ (FBLPromise * (^)(dispatch_queue_t, NSArray *))anyOn {
++ (FBLPromise<NSArray *> * (^)(dispatch_queue_t, NSArray *))anyOn {
   return ^(dispatch_queue_t queue, NSArray *promises) {
     return [self onQueue:queue any:promises];
   };

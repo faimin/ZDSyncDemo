@@ -8,7 +8,7 @@
 
 #import "BoltsDemo.h"
 #import <libkern/OSAtomic.h>
-#import <Bolts.h>
+#import <Bolts/Bolts.h>
 #import "ZAFNetWorkService.h"
 
 @interface BoltsDemo ()
@@ -51,7 +51,7 @@
 
 - (void)viewTest {
     self.testView.layoutMargins = UIEdgeInsetsMake(100, 100, 100, 100);
-//    self.testView.preservesSuperviewLayoutMargins = YES;
+    //self.testView.preservesSuperviewLayoutMargins = YES;
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
     view.backgroundColor = [UIColor yellowColor];

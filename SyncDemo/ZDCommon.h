@@ -11,15 +11,17 @@
 
 #import "ZAFNetWorkService.h"
 
-static inline NSArray *images(){
-    return @[@"http://img3.douban.com/img/celebrity/small/17525.jpg",
-             @"http://img3.douban.com/img/celebrity/small/34642.jpg",
-             @"http://img5.douban.com/img/celebrity/small/5837.jpg",@"http://img3.douban.com/img/celebrity/small/230.jpg",
-              @"http://img3.douban.com/view/movie_poster_cover/ipst/public/p480747492.jpg",
-              @"http://img3.douban.com/img/celebrity/small/8833.jpg",
-              @"http://img3.douban.com/img/celebrity/small/2274.jpg",
-              @"http://img3.douban.com/img/celebrity/small/104.jpg",
-              @"http://img5.douban.com/img/celebrity/small/47146.jpg"
+static inline NSArray<NSString *> *images(){
+    return @[
+        @"http://img3.douban.com/img/celebrity/small/17525.jpg",
+        @"http://img3.douban.com/img/celebrity/small/34642.jpg",
+        @"http://img5.douban.com/img/celebrity/small/5837.jpg",
+        @"http://img3.douban.com/img/celebrity/small/230.jpg",
+        @"http://img3.douban.com/view/movie_poster_cover/ipst/public/p480747492.jpg",
+        @"http://img3.douban.com/img/celebrity/small/8833.jpg",
+        @"http://img3.douban.com/img/celebrity/small/2274.jpg",
+        @"http://img3.douban.com/img/celebrity/small/104.jpg",
+        @"http://img5.douban.com/img/celebrity/small/47146.jpg"
     ];
 }
 

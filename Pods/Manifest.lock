@@ -67,7 +67,7 @@ PODS:
     - PromiseKit/When
   - PromiseKit/When (1.7.6):
     - PromiseKit/Promise
-  - PromisesObjC (1.0.8)
+  - PromisesObjC (1.1.0)
   - ReactiveObjC (3.1.0)
 
 DEPENDENCIES:
@@ -91,7 +91,7 @@ SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   OMGHTTPURLRQ: 9ac96bdf5c90a33f75836630729ea1adc312a9ed
   PromiseKit: 94bcf2f44424df0384af81c6221cb3bfa3e7ed4c
-  PromisesObjC: 51435f4ea6fb4ad2f1684cd59aeda60f3c274f4a
+  PromisesObjC: 9ee393d5fb075baf186b99a00608f5ce3fb341fd
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
 
 PODFILE CHECKSUM: 6296a64db9a52c37a9363dc79bcba24ef62fa4a6

@@ -8,7 +8,7 @@
 
 #import "PromiseKitDemo.h"
 #import "ZDCommon.h"
-#import <PromiseKit.h>
+#import <PromiseKit/PromiseKit.h>
 
 @interface PromiseKitDemo ()
 @property (weak, nonatomic) IBOutlet UITextView *textview;
