@@ -1,12 +1,22 @@
 # Blots、PromiseKit 源码简析
 
+## Link：
+
+- [Bolts原理](#Bolts)
+
+- [PromiseKit原理](#PromiseKit)
+
+- [Promises原理](#Promises)
+
+
+
 #### 一、Bolts:
 
 `BFTask`原理：每个`BFTask`自己都维护着一个任务数组，当 task 执行`continueWithBlock:`后（会生成一个新的`BFTask`），`continueWithBlock:`带的那个 block 会被加入到任务数组中，每当有结果返回时，会执行`trySetResult:`方法，这个方法中会拿到 task 它自己维护的那个任务数组，然后取出其中的所有任务 block，然后遍历执行。
 
 #### 二、PromiseKit:
 
-1.  首先，让我们看看创建 Promise 的源码
+1. 首先，让我们看看创建 Promise 的源码
 
 ```objc
 + (instancetype)promiseWithResolver:(void (^)(PMKResolver))block {    // (2)
@@ -84,7 +94,7 @@ static void PMKResolve(PMKPromise *this, id result) {
 
 ---
 
-2.  下面看一下`then`的源码实现：
+2. 下面看一下`then`的源码实现：
 
 ```objc
 - (PMKPromise *(^)(id))then {      // 1
@@ -175,5 +185,11 @@ static void PMKResolve(PMKPromise *this, id result) {
 ```
 
 > 这个方法看上去很复杂，仔细看看,函数的形参其实就是 2 个 block，一个是 resolved 的 block，还有一个是 pending 的 block。当一个 promise 经历过 resolved 之后，可能是 fulfill，也可能是 reject，之后生成 next 新的 promise，传入到下一个 then 中，并且状态会变成 pending。上面代码中第一个 return，如果 next 为 nil，那么意味着 promise 没有生成，这是会再调用一次 mkresolvedCallback，并传入参数 result，生成的 PMKResolveOnQueueBlock，再次传入(q, block)，直到 next 的 promise 生成，并把 pendingCallback 存入到 handler 当中。这个 handler 存了所有待执行的 block，如果把这个数组里面的 block 都执行，那么就相当于依次完成了上面的所有异步操作。第二个 return 是在 callblock 为 nil 的时候，还会再调一次 mkresolvedCallback(result)，保证一定要生成 next 的 promise。
-
+> 
 > 这个函数里面的这里 dispatch_barrier_sync 这个方法，就是 promise 后面可以链式调用 then 的原因，因为 GCD 的这个方法，让后面 then 变得像一行行的 then 顺序执行了。
+
+#### 三、Promises：
+
+原理和`Bolts`很相似，每次执行`then`时都会创建一个`block`和一个新的`promise`对象，这个新创建的`block` 可以理解为一个监听者，监听上一个（旧）`promise` ，这个监听者会被添加到旧`promise` 持有的监听者数组中，也就是说一个`promise` 支持多个`then` 操作。当旧的`promise` 完成（执行`fulfill` ）时会调用它的监听者们，即执行`block` ，这样`then` 中的操作就会执行了。
+
+
