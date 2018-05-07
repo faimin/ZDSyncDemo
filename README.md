@@ -2,11 +2,11 @@
 
 ## Link：
 
-- [Bolts原理](#Bolts)
+- [Bolts原理](#一、Bolts:)
 
-- [PromiseKit原理](#PromiseKit)
+- [PromiseKit原理](#二、PromiseKit:)
 
-- [Promises原理](#Promises)
+- [Promises原理](#三、Promises:)
 
 
 
@@ -188,7 +188,7 @@ static void PMKResolve(PMKPromise *this, id result) {
 > 
 > 这个函数里面的这里 dispatch_barrier_sync 这个方法，就是 promise 后面可以链式调用 then 的原因，因为 GCD 的这个方法，让后面 then 变得像一行行的 then 顺序执行了。
 
-#### 三、Promises：
+#### 三、Promises:
 
 原理和`Bolts`很相似，每次执行`then`时都会创建一个`block`和一个新的`promise`对象，这个新创建的`block` 可以理解为一个监听者，监听上一个（旧）`promise` ，这个监听者会被添加到旧`promise` 持有的监听者数组中，也就是说一个`promise` 支持多个`then` 操作。当旧的`promise` 完成（执行`fulfill` ）时会调用它的监听者们，即执行`block` ，这样`then` 中的操作就会执行了。
 
