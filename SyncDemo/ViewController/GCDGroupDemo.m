@@ -23,6 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.view.backgroundColor = ZD_RandomColor();
     //[self GCDSync1];
     [self GCDSync2];
     //[self GCDSync3];

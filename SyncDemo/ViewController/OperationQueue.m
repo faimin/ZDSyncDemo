@@ -24,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = ZD_RandomColor();
     
     [self operationQueueSync];
     

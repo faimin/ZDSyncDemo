@@ -23,9 +23,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
-    [self request];
+    self.view.backgroundColor = ZD_RandomColor();
 
+    [self request];
 }
 
 - (void)didReceiveMemoryWarning {

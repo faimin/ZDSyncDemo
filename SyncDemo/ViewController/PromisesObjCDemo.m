@@ -28,6 +28,7 @@
 }
 
 - (void)setup {
+    self.view.backgroundColor = ZD_RandomColor();
     [self setupPromises];
 }
 

@@ -7,11 +7,14 @@
 //
 
 #import "ZDTableViewController.h"
+#import "ZDCommon.h"
 
 static CGFloat const SectionHeight = 28.0;
+static NSString *const CellReuseIdentifier = @"UITableViewCell";
 
 @interface ZDTableViewController ()
 @property (nonatomic, assign) CGFloat recordContentOffsetY;
+@property (nonatomic, strong) NSArray<NSDictionary<NSString *, NSString *> *> *dataSource;
 @end
 
 @implementation ZDTableViewController
@@ -25,12 +28,42 @@ static CGFloat const SectionHeight = 28.0;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [self setup];
+}
+
+- (void)setup {
+    [self setupUI];
+    [self setupData];
+}
+
+- (void)setupUI {
+    
+}
+
+- (void)setupData {
+    // @{ className : description }
+    self.dataSource = @[
+        @{ @"BoltsDemo" : @"BoltsDemo" },
+        @{ @"PromiseKitDemo" : @"PromiseKitDemo" },
+        @{ @"PromisesObjCDemo" : @"PromisesObjCDemo" },
+        @{ @"RACDemo" : @"RACDemo" },
+        @{ @"GCDGroupDemo" : @"GCDGroupDemo" },
+        @{ @"OperationDemo" : @"OperationDemo" },
+        @{ @"OperationQueue" : @"OperationQueue" },
+        @{ @"SemaphoreDemo" : @"SemaphoreDemo" },
+        @{ @"RunLoopDemo" : @"RunLoopDemo(not recommended)" },
+        @{ @"PthreadJoinDemo" : @"PthreadJoinDemo" },
+        //@{ @"GCDSourceDataAddDemo" : @"GCDSourceDataAddDemo" },
+    ];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Delegate
 
 // 让section跟随滑动
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -66,23 +99,36 @@ static CGFloat const SectionHeight = 28.0;
 
 #pragma mark - Table view data source
 
-/*
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return self.dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellReuseIdentifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellReuseIdentifier];
+    }
+    cell.textLabel.textColor = ZD_RandomColor();
+    cell.textLabel.text = self.dataSource[indexPath.row].allValues.firstObject;
     return cell;
 }
-*/
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    NSString *className = self.dataSource[indexPath.row].allKeys.firstObject;
+    Class aClass = NSClassFromString(className);
+    if (!aClass) return;
+    [self.navigationController pushViewController:[aClass new] animated:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 50;
+}
 
 /*
 // Override to support conditional editing of the table view.

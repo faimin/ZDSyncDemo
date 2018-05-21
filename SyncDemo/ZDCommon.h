@@ -28,6 +28,13 @@ static inline NSArray<NSString *> *images(){
 #define MovieAPI    @"http://api.douban.com/v2/movie/top250"
 #define WeatherAPI  @"http://www.weather.com.cn/data/cityinfo/101010100.html"
 
+NS_INLINE UIColor *ZD_RandomColor(void) {
+    CGFloat hue = (arc4random() % 256 / 256.0);
+    CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;
+    CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;
+    return [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
+}
+
 #endif /* ZDCommon_h */
 
 

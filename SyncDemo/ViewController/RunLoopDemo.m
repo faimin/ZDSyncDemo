@@ -23,12 +23,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.view.backgroundColor = ZD_RandomColor();
+    
     [self runloop];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 // http://www.jianshu.com/p/34d2b6c7de8a
@@ -48,8 +45,7 @@
     NSLog(@"finish");
 }
 
-static void runLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void *info)
-{
+static void runLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void *info) {
     
 }
 
@@ -69,6 +65,11 @@ static void runLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActi
                             &context);
     CFRunLoopAddObserver(CFRunLoopGetCurrent(), observer, kCFRunLoopCommonModes);
     
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 /*
