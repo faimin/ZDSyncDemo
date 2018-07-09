@@ -28,7 +28,6 @@
     [self runloop];
 }
 
-// http://www.jianshu.com/p/34d2b6c7de8a
 - (void)runloop {
     __block id result = nil;
     [[ZAFNetWorkService shareInstance] requestWithURL:MovieAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
@@ -39,6 +38,7 @@
         CFRunLoopStop(CFRunLoopGetMain());
     }];
     // 阻塞主线程的方法,不推荐
+    // 当调用 CFRunLoopRun() 时，线程就会一直停留在这个循环里；直到超时或被手动停止，该函数才会返回。
     CFRunLoopRun();
     
     NSLog(@"%@", result);
@@ -59,12 +59,12 @@ static void runLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActi
     };
     CFRunLoopObserverRef observer = CFRunLoopObserverCreate(kCFAllocatorDefault,
                             kCFRunLoopAllActivities,
-                            YES,
+                            true,
                             0,
                             &runLoopObserverCallBack,
                             &context);
     CFRunLoopAddObserver(CFRunLoopGetCurrent(), observer, kCFRunLoopCommonModes);
-    
+    CFRelease(observer);
 }
 
 - (void)didReceiveMemoryWarning {
