@@ -54,6 +54,7 @@ static NSString *const CellReuseIdentifier = @"UITableViewCell";
         @{ @"SemaphoreDemo" : @"SemaphoreDemo" },
         @{ @"RunLoopDemo" : @"RunLoopDemo(not recommended)" },
         @{ @"PthreadJoinDemo" : @"PthreadJoinDemo" },
+        @{ @"DispatchBlockDemo" : @"DispatchBlockDemo"},
         //@{ @"GCDSourceDataAddDemo" : @"GCDSourceDataAddDemo" },
     ];
 }

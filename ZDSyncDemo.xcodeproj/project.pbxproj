@@ -26,6 +26,7 @@
 		DA2BA9851FD253D100F97F03 /* OperationDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2BA9841FD253D100F97F03 /* OperationDemo.m */; };
 		DA6C9D2F1F1320AD004EBA44 /* PthreadJoinDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6C9D2E1F1320AD004EBA44 /* PthreadJoinDemo.m */; };
 		FA0B042C20B01C6300A73683 /* GCDSourceDataAddDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0B042B20B01C6300A73683 /* GCDSourceDataAddDemo.m */; };
+		FA1AA0BD20F74AB800903E13 /* DispatchBlockDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1AA0BC20F74AB800903E13 /* DispatchBlockDemo.m */; };
 		FA2EFEE22092CFC2008BE6F3 /* PromisesObjCDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFEE12092CFC2008BE6F3 /* PromisesObjCDemo.m */; };
 		FA2EFEE520930851008BE6F3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2EFEE420930851008BE6F3 /* XCTest.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FACB0260207B1A1C0092E1EB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FACB025E207B1A1C0092E1EB /* Info.plist */; };
@@ -83,6 +84,8 @@
 		F89F0378169984B0A47B89B2 /* Pods-ZDSyncDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZDSyncDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZDSyncDemo/Pods-ZDSyncDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		FA0B042A20B01C6300A73683 /* GCDSourceDataAddDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDSourceDataAddDemo.h; sourceTree = "<group>"; };
 		FA0B042B20B01C6300A73683 /* GCDSourceDataAddDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDSourceDataAddDemo.m; sourceTree = "<group>"; };
+		FA1AA0BB20F74AB800903E13 /* DispatchBlockDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DispatchBlockDemo.h; sourceTree = "<group>"; };
+		FA1AA0BC20F74AB800903E13 /* DispatchBlockDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DispatchBlockDemo.m; sourceTree = "<group>"; };
 		FA2EFEE02092CFC2008BE6F3 /* PromisesObjCDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PromisesObjCDemo.h; sourceTree = "<group>"; };
 		FA2EFEE12092CFC2008BE6F3 /* PromisesObjCDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PromisesObjCDemo.m; sourceTree = "<group>"; };
 		FA2EFEE420930851008BE6F3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -207,6 +210,8 @@
 				BCE4F9E31C5A10BF00BBDB03 /* OperationQueue.m */,
 				BCC64A581D632FB000E95FB6 /* SemaphoreDemo.h */,
 				BCC64A591D632FB000E95FB6 /* SemaphoreDemo.m */,
+				FA1AA0BB20F74AB800903E13 /* DispatchBlockDemo.h */,
+				FA1AA0BC20F74AB800903E13 /* DispatchBlockDemo.m */,
 				BC75F9CC1D47205200C25BB7 /* RunLoopDemo.h */,
 				BC75F9CD1D47205200C25BB7 /* RunLoopDemo.m */,
 				DA6C9D2D1F1320AD004EBA44 /* PthreadJoinDemo.h */,
@@ -382,6 +387,7 @@
 				DA6C9D2F1F1320AD004EBA44 /* PthreadJoinDemo.m in Sources */,
 				BCAC9FA71B93555100822B5E /* BoltsDemo.m in Sources */,
 				FACB0261207B1A1C0092E1EB /* ZDSyncDemoTests.m in Sources */,
+				FA1AA0BD20F74AB800903E13 /* DispatchBlockDemo.m in Sources */,
 				BC5571AF1C51D10800019326 /* PromiseKitDemo.m in Sources */,
 				BCAC9FA41B93555100822B5E /* AppDelegate.m in Sources */,
 				BC75F9CE1D47205200C25BB7 /* RunLoopDemo.m in Sources */,
