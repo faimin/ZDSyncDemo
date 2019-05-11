@@ -8,6 +8,7 @@
 
 #import "OperationQueue.h"
 #import "ZDCommon.h"
+#import "ZDSerialOperation.h"
 
 @interface OperationQueue ()
 
@@ -27,7 +28,7 @@
     self.view.backgroundColor = ZD_RandomColor();
     
     [self operationQueueSync];
-    
+    [self serialOperation];
     [self afSync];
 }
 
@@ -78,6 +79,35 @@
 
     [myOperationQueue waitUntilAllOperationsAreFinished];
     
+    NSLog(@"都下载完毕");
+}
+
+- (void)serialOperation {
+    NSMutableArray *allDatas = @[].mutableCopy;
+    
+    NSOperationQueue *myOperationQueue = [[NSOperationQueue alloc] init];
+    myOperationQueue.maxConcurrentOperationCount = 1;
+    
+    ZDSerialOperation *op1 = [ZDSerialOperation operationWithBlock:^(ZDOnComplteBlock  _Nonnull taskFinishCallback) {
+        NSURLSessionDataTask *task1 = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:MovieAPI] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            [allDatas addObject:[self decodeData:data]];
+            NSLog(@"第一个任务结束");
+            taskFinishCallback(YES);
+        }];
+        [task1 resume];
+    }];
+    
+    ZDSerialOperation *op2 = [ZDSerialOperation operationWithBlock:^(ZDOnComplteBlock  _Nonnull taskFinishCallback) {
+        NSURLSessionDataTask *task2 = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:WeatherAPI] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            [allDatas addObject:[self decodeData:data]];
+            NSLog(@"第二个任务结束");
+            taskFinishCallback(YES);
+        }];
+        [task2 resume];
+    }];
+    
+    [myOperationQueue addOperations:@[op1, op2] waitUntilFinished:YES];
+    __unused id result = allDatas;
     NSLog(@"都下载完毕");
 }
 

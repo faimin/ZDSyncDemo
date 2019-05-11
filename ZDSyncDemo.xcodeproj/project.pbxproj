@@ -24,6 +24,7 @@
 		BCE4F9E41C5A10BF00BBDB03 /* OperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE4F9E31C5A10BF00BBDB03 /* OperationQueue.m */; };
 		BCE4F9E71C5A10D100BBDB03 /* GCDGroupDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE4F9E61C5A10D100BBDB03 /* GCDGroupDemo.m */; };
 		DA2BA9851FD253D100F97F03 /* OperationDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2BA9841FD253D100F97F03 /* OperationDemo.m */; };
+		DA33CE3F2286DDC800B05CCF /* ZDSerialOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA33CE3E2286DDC800B05CCF /* ZDSerialOperation.m */; };
 		DA6C9D2F1F1320AD004EBA44 /* PthreadJoinDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6C9D2E1F1320AD004EBA44 /* PthreadJoinDemo.m */; };
 		FA0B042C20B01C6300A73683 /* GCDSourceDataAddDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0B042B20B01C6300A73683 /* GCDSourceDataAddDemo.m */; };
 		FA1AA0BD20F74AB800903E13 /* DispatchBlockDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1AA0BC20F74AB800903E13 /* DispatchBlockDemo.m */; };
@@ -79,6 +80,8 @@
 		BCE4F9E81C5A130200BBDB03 /* ZDCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCommon.h; sourceTree = "<group>"; };
 		DA2BA9831FD253D100F97F03 /* OperationDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OperationDemo.h; sourceTree = "<group>"; };
 		DA2BA9841FD253D100F97F03 /* OperationDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OperationDemo.m; sourceTree = "<group>"; };
+		DA33CE3D2286DDC800B05CCF /* ZDSerialOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSerialOperation.h; sourceTree = "<group>"; };
+		DA33CE3E2286DDC800B05CCF /* ZDSerialOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSerialOperation.m; sourceTree = "<group>"; };
 		DA6C9D2D1F1320AD004EBA44 /* PthreadJoinDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PthreadJoinDemo.h; sourceTree = "<group>"; };
 		DA6C9D2E1F1320AD004EBA44 /* PthreadJoinDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PthreadJoinDemo.m; sourceTree = "<group>"; };
 		F89F0378169984B0A47B89B2 /* Pods-ZDSyncDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZDSyncDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZDSyncDemo/Pods-ZDSyncDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +165,7 @@
 				BCAC9FA21B93555100822B5E /* AppDelegate.h */,
 				BCAC9FA31B93555100822B5E /* AppDelegate.m */,
 				BCE4F9E81C5A130200BBDB03 /* ZDCommon.h */,
+				DA33CE3C2286DDB600B05CCF /* Utility */,
 				BCE4F9E91C5A206600BBDB03 /* ViewController */,
 				BCAC9FAB1B93555100822B5E /* Images.xcassets */,
 				BCAC9FAD1B93555100822B5E /* LaunchScreen.xib */,
@@ -220,6 +224,15 @@
 				FA0B042B20B01C6300A73683 /* GCDSourceDataAddDemo.m */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DA33CE3C2286DDB600B05CCF /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				DA33CE3D2286DDC800B05CCF /* ZDSerialOperation.h */,
+				DA33CE3E2286DDC800B05CCF /* ZDSerialOperation.m */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		FACB025C207B1A1C0092E1EB /* ZDSyncDemoTests */ = {
@@ -305,6 +318,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -389,6 +403,7 @@
 				FACB0261207B1A1C0092E1EB /* ZDSyncDemoTests.m in Sources */,
 				FA1AA0BD20F74AB800903E13 /* DispatchBlockDemo.m in Sources */,
 				BC5571AF1C51D10800019326 /* PromiseKitDemo.m in Sources */,
+				DA33CE3F2286DDC800B05CCF /* ZDSerialOperation.m in Sources */,
 				BCAC9FA41B93555100822B5E /* AppDelegate.m in Sources */,
 				BC75F9CE1D47205200C25BB7 /* RunLoopDemo.m in Sources */,
 				057F095E1D45BA9900B8532F /* RACDemo.m in Sources */,
