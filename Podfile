@@ -3,8 +3,8 @@ platform :ios, '8.0'
 
 def pods
   pod 'Bolts', '~> 1.9.0'
-  pod 'PromiseKit', '~> 1.7.6'
-  pod 'AFNetworking', '~> 2.6.3'
+  pod 'PromiseKit', '~> 1.7.7'
+  pod 'AFNetworking', '~> 2.7.0'
   pod 'ReactiveObjC'
   pod 'PromisesObjC'
   #pod 'Realm', '~> 1.0.1', :inhibit_warnings => true

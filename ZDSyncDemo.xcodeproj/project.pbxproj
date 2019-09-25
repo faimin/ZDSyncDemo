@@ -30,6 +30,7 @@
 		FA1AA0BD20F74AB800903E13 /* DispatchBlockDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1AA0BC20F74AB800903E13 /* DispatchBlockDemo.m */; };
 		FA2EFEE22092CFC2008BE6F3 /* PromisesObjCDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFEE12092CFC2008BE6F3 /* PromisesObjCDemo.m */; };
 		FA2EFEE520930851008BE6F3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2EFEE420930851008BE6F3 /* XCTest.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		FA394AC4233B484300221EC3 /* ZDRunloop.m in Sources */ = {isa = PBXBuildFile; fileRef = FA394AC3233B484300221EC3 /* ZDRunloop.m */; };
 		FACB0260207B1A1C0092E1EB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FACB025E207B1A1C0092E1EB /* Info.plist */; };
 		FACB0261207B1A1C0092E1EB /* ZDSyncDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FACB025F207B1A1C0092E1EB /* ZDSyncDemoTests.m */; };
 /* End PBXBuildFile section */
@@ -92,6 +93,8 @@
 		FA2EFEE02092CFC2008BE6F3 /* PromisesObjCDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PromisesObjCDemo.h; sourceTree = "<group>"; };
 		FA2EFEE12092CFC2008BE6F3 /* PromisesObjCDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PromisesObjCDemo.m; sourceTree = "<group>"; };
 		FA2EFEE420930851008BE6F3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		FA394AC2233B484300221EC3 /* ZDRunloop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDRunloop.h; sourceTree = "<group>"; };
+		FA394AC3233B484300221EC3 /* ZDRunloop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDRunloop.m; sourceTree = "<group>"; };
 		FACB025E207B1A1C0092E1EB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FACB025F207B1A1C0092E1EB /* ZDSyncDemoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSyncDemoTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -231,6 +234,8 @@
 			children = (
 				DA33CE3D2286DDC800B05CCF /* ZDSerialOperation.h */,
 				DA33CE3E2286DDC800B05CCF /* ZDSerialOperation.m */,
+				FA394AC2233B484300221EC3 /* ZDRunloop.h */,
+				FA394AC3233B484300221EC3 /* ZDRunloop.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -411,6 +416,7 @@
 				FA0B042C20B01C6300A73683 /* GCDSourceDataAddDemo.m in Sources */,
 				BC5571AC1C51D04A00019326 /* ZDTableViewController.m in Sources */,
 				BCAC9FC71B9356C200822B5E /* ZAFNetWorkService.m in Sources */,
+				FA394AC4233B484300221EC3 /* ZDRunloop.m in Sources */,
 				BCE4F9E71C5A10D100BBDB03 /* GCDGroupDemo.m in Sources */,
 				FA2EFEE22092CFC2008BE6F3 /* PromisesObjCDemo.m in Sources */,
 				BCAC9FA11B93555100822B5E /* main.m in Sources */,

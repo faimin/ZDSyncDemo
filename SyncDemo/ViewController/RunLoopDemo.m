@@ -8,9 +8,10 @@
 
 #import "RunLoopDemo.h"
 #import "ZDCommon.h"
+#import "ZDRunloop.h"
 
 @interface RunLoopDemo ()
-
+@property (nonatomic, strong) ZDRunloop *zdRunloop;
 @end
 
 @implementation RunLoopDemo
@@ -25,10 +26,25 @@
     
     self.view.backgroundColor = ZD_RandomColor();
     
-    [self runloop];
+    self.zdRunloop = ZDRunloop.new;
+    
+//    [self runloopDemo];
+    [self netTask];
 }
 
-- (void)runloop {
+- (void)netTask {
+    [self.zdRunloop addTask:^(id  _Nonnull (^ _Nonnull callback)(id _Nonnull)) {
+        [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
+            callback(responseObject);
+        } failure: ^(NSError *error) {
+            callback(error);
+        }];
+    }];
+    
+    NSLog(@"============================");
+}
+
+- (void)runloopDemo {
     __block id result = nil;
     [[ZAFNetWorkService shareInstance] requestWithURL:MovieAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
         result = responseObject;
@@ -40,46 +56,16 @@
     // 阻塞主线程的方法,不推荐
     // 当调用 CFRunLoopRun() 时，线程就会一直停留在这个循环里；直到超时或被手动停止，该函数才会返回。
     CFRunLoopRun();
-    
+
     NSLog(@"%@", result);
     NSLog(@"finish");
 }
 
-static void runLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void *info) {
-    
-}
-
-- (void)test {
-    CFRunLoopObserverContext context = {
-        0,
-        (__bridge void *)self,
-        &CFRetain,
-        &CFRelease,
-        NULL
-    };
-    CFRunLoopObserverRef observer = CFRunLoopObserverCreate(kCFAllocatorDefault,
-                            kCFRunLoopAllActivities,
-                            true,
-                            0,
-                            &runLoopObserverCallBack,
-                            &context);
-    CFRunLoopAddObserver(CFRunLoopGetCurrent(), observer, kCFRunLoopCommonModes);
-    CFRelease(observer);
-}
+#pragma mark -
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
