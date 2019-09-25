@@ -20,18 +20,19 @@
 
 @implementation FBLPromise (ValidateAdditions)
 
-- (FBLPromise *)validate:(FBLPromiseValidateWorkBlock)predicate {
+- (FBLPromise*)validate:(FBLPromiseValidateWorkBlock)predicate {
   return [self onQueue:FBLPromise.defaultDispatchQueue validate:predicate];
 }
 
-- (FBLPromise *)onQueue:(dispatch_queue_t)queue validate:(FBLPromiseValidateWorkBlock)predicate {
+- (FBLPromise*)onQueue:(dispatch_queue_t)queue validate:(FBLPromiseValidateWorkBlock)predicate {
   NSParameterAssert(queue);
   NSParameterAssert(predicate);
 
   FBLPromiseChainedFulfillBlock chainedFulfill = ^id(id value) {
-    return predicate(value) ? value : [NSError errorWithDomain:FBLPromiseErrorDomain
-                                                          code:FBLPromiseErrorCodeValidationFailure
-                                                      userInfo:nil];
+    return predicate(value) ? value :
+                              [[NSError alloc] initWithDomain:FBLPromiseErrorDomain
+                                                         code:FBLPromiseErrorCodeValidationFailure
+                                                     userInfo:nil];
   };
   return [self chainOnQueue:queue chainedFulfill:chainedFulfill chainedReject:nil];
 }

@@ -14,50 +14,45 @@
  limitations under the License.
  */
 
-#import "FBLPromise+Timeout.h"
+#import "FBLPromise+Delay.h"
 
 #import "FBLPromisePrivate.h"
 
-@implementation FBLPromise (TimeoutAdditions)
+@implementation FBLPromise (DelayAdditions)
 
-- (FBLPromise *)timeout:(NSTimeInterval)interval {
-  return [self onQueue:FBLPromise.defaultDispatchQueue timeout:interval];
+- (FBLPromise *)delay:(NSTimeInterval)interval {
+  return [self onQueue:FBLPromise.defaultDispatchQueue delay:interval];
 }
 
-- (FBLPromise *)onQueue:(dispatch_queue_t)queue timeout:(NSTimeInterval)interval {
+- (FBLPromise *)onQueue:(dispatch_queue_t)queue delay:(NSTimeInterval)interval {
   NSParameterAssert(queue);
 
   FBLPromise *promise = [[FBLPromise alloc] initPending];
   [self observeOnQueue:queue
       fulfill:^(id __nullable value) {
-        [promise fulfill:value];
+        dispatch_after(dispatch_time(0, (int64_t)(interval * NSEC_PER_SEC)), queue, ^{
+          [promise fulfill:value];
+        });
       }
       reject:^(NSError *error) {
         [promise reject:error];
       }];
-  typeof(self) __weak weakPromise = promise;
-  dispatch_after(dispatch_time(0, (int64_t)(interval * NSEC_PER_SEC)), queue, ^{
-    NSError *timedOutError = [[NSError alloc] initWithDomain:FBLPromiseErrorDomain
-                                                        code:FBLPromiseErrorCodeTimedOut
-                                                    userInfo:nil];
-    [weakPromise reject:timedOutError];
-  });
   return promise;
 }
 
 @end
 
-@implementation FBLPromise (DotSyntax_TimeoutAdditions)
+@implementation FBLPromise (DotSyntax_DelayAdditions)
 
-- (FBLPromise* (^)(NSTimeInterval))timeout {
+- (FBLPromise * (^)(NSTimeInterval))delay {
   return ^(NSTimeInterval interval) {
-    return [self timeout:interval];
+    return [self delay:interval];
   };
 }
 
-- (FBLPromise* (^)(dispatch_queue_t, NSTimeInterval))timeoutOn {
+- (FBLPromise * (^)(dispatch_queue_t, NSTimeInterval))delayOn {
   return ^(dispatch_queue_t queue, NSTimeInterval interval) {
-    return [self onQueue:queue timeout:interval];
+    return [self onQueue:queue delay:interval];
   };
 }
 
