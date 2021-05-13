@@ -4,7 +4,7 @@
 //
 // Created by apple on 14/11/21.
 // Copyright (c) 2014年 Fate.D.Saber. All rights reserved.
-// https://onedrive.live.com/edit.aspx?cid=1511C865AE1E5738&resid=1511C865AE1E5738%21642&app=OneNote
+//
 //
 
 #import "ZAFNetWorkService.h"

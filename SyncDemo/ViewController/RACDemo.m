@@ -29,8 +29,8 @@
 }
 
 - (void)rac {
-    RACSignal *signal1 = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        [[ZAFNetWorkService shareInstance] requestWithURL:MovieAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
+    RACSignal *signal1 = [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
             [subscriber sendNext:responseObject];
             [subscriber sendCompleted];
         } failure: ^(NSError *error) {
@@ -40,9 +40,9 @@
         return [RACDisposable disposableWithBlock:^{
             NSLog(@"异步请求1结束了");
         }];
-    }];
+    }] replayLazily];
     
-    RACSignal *signal2 = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+    RACSignal *signal2 = [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
             [subscriber sendNext:responseObject];
             [subscriber sendCompleted];
@@ -53,8 +53,15 @@
         return [RACDisposable disposableWithBlock:^{
             NSLog(@"异步请求2结束了");
         }];
+    }] replayLazily];
+    
+    // 方式1
+    [[RACSignal zip:@[signal1, signal2]] subscribeNext:^(RACTuple * _Nullable x) {
+        RACTupleUnpack(id v1, id v2) = x;
+        NSLog(@"v1 = %@, v2 = %@", v1, v2);
     }];
     
+    // 方式2
     // 先拼接后收集
     [[[signal1 concat:signal2] collect] subscribeNext:^(NSArray<NSDictionary *> *x) {
         NSLog(@"%@", x);
