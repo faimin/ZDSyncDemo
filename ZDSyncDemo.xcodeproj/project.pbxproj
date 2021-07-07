@@ -31,6 +31,7 @@
 		FA2EFEE22092CFC2008BE6F3 /* PromisesObjCDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFEE12092CFC2008BE6F3 /* PromisesObjCDemo.m */; };
 		FA2EFEE520930851008BE6F3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2EFEE420930851008BE6F3 /* XCTest.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FA394AC4233B484300221EC3 /* ZDRunloop.m in Sources */ = {isa = PBXBuildFile; fileRef = FA394AC3233B484300221EC3 /* ZDRunloop.m */; };
+		FA52F9EA26954E5100AC03A0 /* ConditionLockDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = FA52F9E926954E5100AC03A0 /* ConditionLockDemo.m */; };
 		FACB0260207B1A1C0092E1EB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FACB025E207B1A1C0092E1EB /* Info.plist */; };
 		FACB0261207B1A1C0092E1EB /* ZDSyncDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FACB025F207B1A1C0092E1EB /* ZDSyncDemoTests.m */; };
 /* End PBXBuildFile section */
@@ -95,6 +96,8 @@
 		FA2EFEE420930851008BE6F3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		FA394AC2233B484300221EC3 /* ZDRunloop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDRunloop.h; sourceTree = "<group>"; };
 		FA394AC3233B484300221EC3 /* ZDRunloop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDRunloop.m; sourceTree = "<group>"; };
+		FA52F9E826954E5100AC03A0 /* ConditionLockDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConditionLockDemo.h; sourceTree = "<group>"; };
+		FA52F9E926954E5100AC03A0 /* ConditionLockDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConditionLockDemo.m; sourceTree = "<group>"; };
 		FACB025E207B1A1C0092E1EB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FACB025F207B1A1C0092E1EB /* ZDSyncDemoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSyncDemoTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -223,6 +226,8 @@
 				BC75F9CD1D47205200C25BB7 /* RunLoopDemo.m */,
 				DA6C9D2D1F1320AD004EBA44 /* PthreadJoinDemo.h */,
 				DA6C9D2E1F1320AD004EBA44 /* PthreadJoinDemo.m */,
+				FA52F9E826954E5100AC03A0 /* ConditionLockDemo.h */,
+				FA52F9E926954E5100AC03A0 /* ConditionLockDemo.m */,
 				FA0B042A20B01C6300A73683 /* GCDSourceDataAddDemo.h */,
 				FA0B042B20B01C6300A73683 /* GCDSourceDataAddDemo.m */,
 			);
@@ -422,6 +427,7 @@
 				BCAC9FA11B93555100822B5E /* main.m in Sources */,
 				DA2BA9851FD253D100F97F03 /* OperationDemo.m in Sources */,
 				BCC64A5A1D632FB000E95FB6 /* SemaphoreDemo.m in Sources */,
+				FA52F9EA26954E5100AC03A0 /* ConditionLockDemo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,7 @@
 #import "ZDCommon.h"
 
 @interface PthreadJoinDemo ()
-@property (nonatomic, strong) UIImageView *imageView;
+
 @end
 
 @implementation PthreadJoinDemo
