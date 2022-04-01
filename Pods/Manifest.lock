@@ -78,7 +78,7 @@ DEPENDENCIES:
   - ReactiveObjC
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - Bolts
     - OMGHTTPURLRQ
@@ -96,4 +96,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 1fe4432cdbb9e2be388cb5943592461773290b61
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.11.3
