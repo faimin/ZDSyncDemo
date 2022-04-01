@@ -106,6 +106,9 @@
         [task2 resume];
     }];
     
+    // op2执行完再执行op1
+    [op1 addDependency:op2];
+    
     [myOperationQueue addOperations:@[op1, op2] waitUntilFinished:YES];
     __unused id result = allDatas;
     NSLog(@"都下载完毕");
