@@ -13,6 +13,11 @@
 typedef void (^SuccessHandle)(id responseObject);
 typedef void (^FailureHandle)(NSError *error);
 
+typedef NS_ENUM(NSInteger, HTTPMethod) {
+    HTTPMethod_GET,
+    HTTPMethod_POST,
+};
+
 @interface ZAFNetWorkService : NSObject
 
 /**
@@ -33,6 +38,6 @@ typedef void (^FailureHandle)(NSError *error);
  *
  *  @discussion
  */
-- (AFHTTPRequestOperation *)requestWithURL:(NSString *)URLString params:(id)params httpMethod:(NSString *)httpMethod hasCertificate:(BOOL)hasCer sucess:(SuccessHandle)successBlock failure:(FailureHandle)failureBlock;
+- (AFHTTPRequestOperation *)requestWithURL:(NSString *)URLString params:(id)params httpMethod:(HTTPMethod)httpMethod hasCertificate:(BOOL)hasCer sucess:(SuccessHandle)successBlock failure:(FailureHandle)failureBlock;
 
 @end

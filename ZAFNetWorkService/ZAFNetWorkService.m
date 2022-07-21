@@ -28,7 +28,7 @@
 // 返回值:AFHTTPRequestOperation *
 - (AFHTTPRequestOperation*)requestWithURL:(NSString *)URLString
                                    params:(id)params
-                               httpMethod:(NSString *)httpMethod
+                               httpMethod:(HTTPMethod)httpMethod
                            hasCertificate:(BOOL)hasCer
                                    sucess:(SuccessHandle)successBlock
                                   failure:(FailureHandle)failureBlock
@@ -57,9 +57,8 @@
     // 3.发送请求
     AFHTTPRequestOperation *operation = nil;
     __weak __typeof(*&self) ws = self;
-    NSString *httpMethodStr = [httpMethod lowercaseString]; //转换成小写字母
     
-    if ([httpMethodStr isEqualToString:@"get"])             // GET请求
+    if (httpMethod == HTTPMethod_GET)             // GET请求
     {
         operation = [manager GET:URL parameters:params success: ^(AFHTTPRequestOperation *operation, id responseObject) {
             if (successBlock)
@@ -73,7 +72,7 @@
             }
         }];
     }
-    else if ([httpMethodStr isEqualToString:@"post"])      // POST请求
+    else if (httpMethod == HTTPMethod_POST)      // POST请求
     {
         BOOL isFile = NO;
         for (NSString *key in [params allKeys])
