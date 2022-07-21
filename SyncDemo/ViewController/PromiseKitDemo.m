@@ -32,7 +32,7 @@
 
 - (void)promise {
     PMKPromise *promise = [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
-        [[ZAFNetWorkService shareInstance] requestWithURL:MovieAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
+        [[ZAFNetWorkService shareInstance] requestWithURL:MovieAPI params:nil httpMethod:HTTPMethod_GET hasCertificate:NO sucess: ^(id responseObject) {
             // 多个参数的时候用PMKManifold
             // fulfill(PMKManifold(responseObject));
             fulfill(responseObject);
@@ -55,7 +55,7 @@
 
 - (void)when {
     PMKPromise *promise1 = [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
-        [[ZAFNetWorkService shareInstance] requestWithURL:MovieAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
+        [[ZAFNetWorkService shareInstance] requestWithURL:MovieAPI params:nil httpMethod:HTTPMethod_GET hasCertificate:NO sucess: ^(id responseObject) {
             fulfill(responseObject);
         } failure: ^(NSError *error) {
             reject(error);
@@ -63,7 +63,7 @@
     }];
 
     PMKPromise *promise2 = [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
-        [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
+        [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:HTTPMethod_GET hasCertificate:NO sucess: ^(id responseObject) {
             fulfill(responseObject);
         } failure: ^(NSError *error) {
             reject(error);

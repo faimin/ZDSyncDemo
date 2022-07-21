@@ -44,14 +44,14 @@
 }
 
 - (void)request {
-    [[ZAFNetWorkService shareInstance] requestWithURL:MovieAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
+    [[ZAFNetWorkService shareInstance] requestWithURL:MovieAPI params:nil httpMethod:HTTPMethod_GET hasCertificate:NO sucess: ^(id responseObject) {
         [self.allDatas addObject:responseObject];
         dispatch_source_merge_data(self.source, 1);
     } failure: ^(NSError *error) {
         dispatch_source_merge_data(self.source, 1);
     }];
     
-    [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
+    [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:HTTPMethod_GET hasCertificate:NO sucess: ^(id responseObject) {
         [self.allDatas addObject:responseObject];
         dispatch_source_merge_data(self.source, 1);
     } failure: ^(NSError *error) {

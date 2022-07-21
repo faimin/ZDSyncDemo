@@ -34,7 +34,7 @@
 
 - (void)setupPromises {
     FBLPromise *promise1 = [FBLPromise async:^(FBLPromiseFulfillBlock  _Nonnull fulfill, FBLPromiseRejectBlock  _Nonnull reject) {
-        [[ZAFNetWorkService shareInstance] requestWithURL:MovieAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
+        [[ZAFNetWorkService shareInstance] requestWithURL:MovieAPI params:nil httpMethod:HTTPMethod_GET hasCertificate:NO sucess: ^(id responseObject) {
             fulfill(responseObject);
         } failure: ^(NSError *error) {
             reject(error);
@@ -50,7 +50,7 @@
     });
     
     FBLPromise *promise2 = [FBLPromise async:^(FBLPromiseFulfillBlock  _Nonnull fulfill, FBLPromiseRejectBlock  _Nonnull reject) {
-        [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
+        [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:HTTPMethod_GET hasCertificate:NO sucess: ^(id responseObject) {
             fulfill(responseObject);
         } failure: ^(NSError *error) {
             reject(error);

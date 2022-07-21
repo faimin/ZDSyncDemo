@@ -30,7 +30,7 @@
     dispatch_async(dispatch_get_global_queue(QOS_CLASS_UTILITY, 0), ^{
         // 与condition 100相同，不会阻塞，继续往下执行
         [conditionLock lockWhenCondition:100];
-        [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
+        [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:HTTPMethod_GET hasCertificate:NO sucess: ^(id responseObject) {
             [self.allDatas addObject:responseObject];
             [conditionLock unlockWithCondition:37];
         } failure: ^(NSError *error) {
@@ -39,7 +39,7 @@
         
         // 与condition 100不相同，阻塞等待
         [conditionLock lockWhenCondition:37];
-        [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
+        [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:HTTPMethod_GET hasCertificate:NO sucess: ^(id responseObject) {
             [self.allDatas addObject:responseObject];
             [conditionLock unlockWithCondition:3000];
         } failure: ^(NSError *error) {
@@ -59,14 +59,14 @@
     
     // 请求顺序执行
     dispatch_async(dispatch_get_global_queue(QOS_CLASS_UTILITY, 0), ^{
-        [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
+        [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:HTTPMethod_GET hasCertificate:NO sucess: ^(id responseObject) {
             [self.allDatas addObject:responseObject];
             [condition signal];
         } failure: ^(NSError *error) {
             [condition signal];
         }];
         
-        [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
+        [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:HTTPMethod_GET hasCertificate:NO sucess: ^(id responseObject) {
             [self.allDatas addObject:responseObject];
             [condition signal];
         } failure: ^(NSError *error) {

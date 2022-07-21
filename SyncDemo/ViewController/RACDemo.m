@@ -30,7 +30,7 @@
 
 - (void)rac {
     RACSignal *signal1 = [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
+        [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:HTTPMethod_GET hasCertificate:NO sucess: ^(id responseObject) {
             [subscriber sendNext:responseObject];
             [subscriber sendCompleted];
         } failure: ^(NSError *error) {
@@ -43,7 +43,7 @@
     }] replayLazily];
     
     RACSignal *signal2 = [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
+        [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:HTTPMethod_GET hasCertificate:NO sucess: ^(id responseObject) {
             [subscriber sendNext:responseObject];
             [subscriber sendCompleted];
         } failure: ^(NSError *error) {

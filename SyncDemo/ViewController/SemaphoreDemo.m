@@ -90,14 +90,14 @@
     NSMutableArray *allDatas = [[NSMutableArray alloc] init];
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
-    [[ZAFNetWorkService shareInstance] requestWithURL:MovieAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
+    [[ZAFNetWorkService shareInstance] requestWithURL:MovieAPI params:nil httpMethod:HTTPMethod_GET hasCertificate:NO sucess: ^(id responseObject) {
         [allDatas addObject:responseObject];
         dispatch_semaphore_signal(semaphore);
     } failure: ^(NSError *error) {
         dispatch_semaphore_signal(semaphore);
     }];
 
-    [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
+    [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:HTTPMethod_GET hasCertificate:NO sucess: ^(id responseObject) {
         [allDatas addObject:responseObject];
         dispatch_semaphore_signal(semaphore);
     } failure: ^(NSError *error) {
@@ -123,14 +123,14 @@
         
         dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
         
-        [[ZAFNetWorkService shareInstance] requestWithURL:MovieAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
+        [[ZAFNetWorkService shareInstance] requestWithURL:MovieAPI params:nil httpMethod:HTTPMethod_GET hasCertificate:NO sucess: ^(id responseObject) {
             [allDatas addObject:responseObject];
             dispatch_semaphore_signal(semaphore);
         } failure: ^(NSError *error) {
             dispatch_semaphore_signal(semaphore);
         }];
         
-        [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
+        [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:HTTPMethod_GET hasCertificate:NO sucess: ^(id responseObject) {
             [allDatas addObject:responseObject];
             dispatch_semaphore_signal(semaphore);
         } failure: ^(NSError *error) {

@@ -72,7 +72,7 @@
 - (BFTask *)taskTest1 {
     BFTaskCompletionSource *taskSource = [BFTaskCompletionSource taskCompletionSource];
 
-    [[ZAFNetWorkService shareInstance] requestWithURL:MovieAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
+    [[ZAFNetWorkService shareInstance] requestWithURL:MovieAPI params:nil httpMethod:HTTPMethod_GET hasCertificate:NO sucess: ^(id responseObject) {
         NSLog(@"1.--->%@", [NSDate date]);
         [taskSource setResult:responseObject];
     } failure: ^(NSError *error) {
@@ -85,7 +85,7 @@
 - (BFTask *)taskTest2 {
     BFTaskCompletionSource *taskSource = [BFTaskCompletionSource taskCompletionSource];
 
-    [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:@"get" hasCertificate:NO sucess: ^(id responseObject) {
+    [[ZAFNetWorkService shareInstance] requestWithURL:WeatherAPI params:nil httpMethod:HTTPMethod_GET hasCertificate:NO sucess: ^(id responseObject) {
         NSLog(@"2.--->%@", [NSDate date]);
         [taskSource setResult:responseObject];
     } failure: ^(NSError *error) {
